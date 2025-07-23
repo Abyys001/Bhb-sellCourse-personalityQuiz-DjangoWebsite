@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}فرم ثبت‌نام{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+  <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; 
+        width: 100%;
+        height: 100%;
+      }
+    .login, .wrapper, form, .input-field, .register {
+      direction: rtl;
+      text-align: right;
+    }
+    .input-field label, .input-field input {
+      float: right;
+    }
+    .register p, .register a {
+      text-align: right;
+    }
+    button[type="submit"] {
+      float: right;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="login">
+    <div class="wrapper">
+      <form method="POST" action="{% url 'register' %}">
+        {% csrf_token %}
+        <h2 style="text-align:right;">ثبت‌نام</h2>
+        <div class="input-field">
+          <input type="text" name="phone_number" required style="text-align:right;">
+          <label style="right:0;">شماره تلفن</label>
+        </div>
+        <div class="input-field">
+          <input type="text" name="name" required style="text-align:right;">
+          <label style="right:0;">نام</label>
+        </div>
+        <div class="input-field">
+          <input type="password" name="password1" required style="text-align:right;">
+          <label style="right:0;">رمز عبور</label>
+        </div>
+        <div class="input-field">
+          <input type="password" name="password2" required style="text-align:right;">
+          <label style="right:0;">تکرار رمز عبور</label>
+        </div>
+        <button type="submit" style="float:right;">ثبت‌نام</button>
+        <div class="register">
+          <p>حساب دارید؟ <a href="{% url 'login' %}">ورود</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

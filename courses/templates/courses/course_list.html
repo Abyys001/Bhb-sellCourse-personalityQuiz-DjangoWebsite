@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container-fluid py-5" style="background: linear-gradient(120deg, #0a0a0a 0%, #1a1a1a 100%); min-height: 100vh;">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-10">
+        <div class="rounded-4 shadow-lg p-5 bg-dark bg-opacity-90 border border-secondary border-2 text-center position-relative" style="background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);">
+          <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10" style="background: url('https://example.com/pattern.png') repeat; z-index: 0;"></div>
+          <div class="position-relative" style="z-index: 1;">
+            <h2 class="mb-3" style="color: #FFD700; font-weight: 800; font-size: 2.5rem; letter-spacing: 1px;">
+              <i class="fas fa-graduation-cap me-2 text-gold"></i>دوره‌های تخصصی آموزشی
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center g-4">
+      {% for course in courses %}
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="card shadow-lg border-0 bg-dark text-white h-100 w-100 course-card" style="border-radius: 20px; overflow: hidden; position: relative; border: 1px solid #333;">
+            <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 180px; background: linear-gradient(45deg, #2c3e50 0%, #4ca1af 100%);">
+              <i class="fas fa-laptop-code" style="font-size: 4rem; color: rgba(255,255,255,0.1);"></i>
+            </div>
+            <div class="card-header bg-transparent border-bottom border-secondary px-4 pt-4 pb-3 d-flex align-items-center justify-content-center w-100 gap-3">
+              <span class="badge rounded-pill bg-gold fw-bold px-3 py-2" style="font-size: 1rem; color: #fff !important; background: #FFD700 !important;">
+                <i class="fas fa-certificate me-1" style="color: #fff !important;"></i> ویژه
+              </span>
+              <span class="text-white" style="font-size: 0.9rem;">
+                <i class="fas fa-clock me-1" style="color: #fff !important;"></i>{{ course.duration }} ساعت
+              </span>
+            </div>
+            <div class="card-body d-flex flex-column align-items-center px-4 pb-4 pt-3">
+              <div class="w-100 mb-3 text-center">
+                <h5 class="card-title mb-2" style="color: #FFD700; font-weight: 700; font-size: 1.5rem; line-height: 1.4;">
+                  <i class="fas fa-book-open me-2 text-gold"></i>{{ course.title }}
+                </h5>
+                <p class="text-light mb-3" style="font-size: 0.95rem; line-height: 1.6;">
+                  {{ course.short_description|truncatewords:15 }}
+                </p>
+              </div>
+              
+              <div class="d-flex justify-content-center align-items-center w-100 mb-3 gap-3">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                  <i class="fas fa-star text-warning me-1"></i>
+                  <span class="text-light">4.9</span>
+                  <i class="fas fa-user-graduate text-info me-1"></i>
+                  <span class="text-light">120+</span>
+                </div>
+                <div>
+                  <span class="badge bg-secondary bg-opacity-25 text-light">{{ course.level }}</span>
+                </div>
+              </div>
+              
+              <div class="w-100 mt-auto">
+                <div class="d-flex justify-content-center align-items-center mb-3 gap-2">
+                  <span class="text-light" style="font-size: 1rem;">
+                    <i class="fas fa-coins me-1 text-gold"></i>هزینه دوره:
+                  </span>
+                  <span class="text-gold fw-bold" style="font-size: 1.2rem;">
+                    {{ course.price }} تومان
+                  </span>
+                </div>
+                
+                  <div class="d-flex gap-2 justify-content-center">
+                    <a href="{% url 'course_detail' course.id %}" class="btn btn-gold-gradient btn-lg flex-grow-1 text-white custom-gold-btn" style="font-weight: 700; border-radius: 12px; font-size: 1.1rem; max-width: 80%;">
+                      مشاهده جزئیات <i class="fas fa-arrow-left ms-2"></i>
+                    </a>
+                    <button class="btn btn-outline-gold btn-lg px-3" style="border-radius: 12px;">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                  </div>
+                  <style>
+                    .custom-gold-btn {
+                      color: #FFD700 !important;
+                      transition: color 0.2s;
+                    }
+                    .custom-gold-btn:hover, .custom-gold-btn:focus {
+                      color: #FFD700 !important;
+                    }
+                  </style>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <div class="col-12 text-center text-muted">
+          <div class="alert alert-warning bg-dark bg-opacity-75 border-0 rounded-4 py-4 mt-4" style="color: #FFD700; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+            <i class="fas fa-exclamation-circle me-2"></i>در حال حاضر هیچ دوره‌ای موجود نیست. به زودی دوره‌های جدید اضافه خواهند شد.
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+<style>
+  body {
+    background: #0a0a0a;
+    font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .bg-gold {
+    background: linear-gradient(90deg, #FFD700 0%, #e0b800 100%) !important;
+  }
+  .text-gold {
+    color: #FFD700 !important;
+  }
+  .border-gold {
+    border-color: #FFD700 !important;
+  }
+  .course-card {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .course-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(255, 215, 0, 0.15);
+    border: 1px solid #FFD700 !important;
+  }
+  .btn-gold-gradient {
+    background: linear-gradient(90deg, #FFD700 0%, #e0b800 100%);
+    color: #222 !important;
+    border: none;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-gold-gradient:hover, .btn-gold-gradient:focus {
+    background: linear-gradient(90deg, #e0b800 0%, #FFD700 100%);
+    color: #000 !important;
+    box-shadow: 0 6px 16px rgba(255, 215, 0, 0.25);
+    transform: translateY(-2px);
+  }
+  .btn-outline-gold {
+    border: 1px solid #FFD700;
+    color: #FFD700;
+    transition: all 0.2s ease;
+  }
+  .btn-outline-gold:hover {
+    background: rgba(255, 215, 0, 0.1);
+    color: #FFD700;
+  }
+  .card.bg-dark {
+    background: #1e1e1e !important;
+  }
+  .card-title i, .card-header i, .card-text i {
+    color: #FFD700 !important;
+  }
+  .border-secondary {
+    border-color: #333 !important;
+  }
+  
+  /* Animation for cards */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .course-card {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+  }
+  .course-card:nth-child(1) { animation-delay: 0.1s; }
+  .course-card:nth-child(2) { animation-delay: 0.2s; }
+  .course-card:nth-child(3) { animation-delay: 0.3s; }
+  .course-card:nth-child(4) { animation-delay: 0.4s; }
+  .course-card:nth-child(5) { animation-delay: 0.5s; }
+  .course-card:nth-child(6) { animation-delay: 0.6s; }
+</style>

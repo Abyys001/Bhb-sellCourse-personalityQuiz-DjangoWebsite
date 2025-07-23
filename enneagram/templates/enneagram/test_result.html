@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}نتیجه تست{% endblock %}
+{% block content %}
+<style>
+  .dark-gold-theme {
+    background: #181818;
+    color: #e6c77b;
+    /* border-radius: 18px; */ /* Removed rounded border */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    padding: 40px 30px 30px 30px;
+    text-align: center;
+  }
+  .dark-gold-theme h2 {
+    color: #e6c77b;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+  .dark-gold-theme .main-type {
+    display: inline-block;
+    background: #2d2210;
+    color: #ffd700;
+    /* border-radius: 8px; */ /* Removed rounded border */
+    padding: 6px 18px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0 6px;
+    box-shadow: 0 2px 8px rgba(230,199,123,0.08);
+    border: 1px solid #bfa14a;
+  }
+  .dark-gold-theme .type-counts {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .dark-gold-theme .type-count {
+    background: #23201a;
+    color: #e6c77b;
+    /* border-radius: 6px; */ /* Removed rounded border */
+    padding: 6px 14px;
+    font-size: 1rem;
+    border: 1px solid #bfa14a;
+  }
+  .dark-gold-theme .no-answer {
+    color: #ff5555;
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+  .dark-gold-theme .type-description-section {
+    margin-top: 32px;
+    background: #222018;
+    /* border-radius: 12px; */ /* Removed rounded border */
+    padding: 24px 18px;
+    color: #ffe7a0;
+    box-shadow: 0 2px 8px rgba(230,199,123,0.06);
+    text-align: right;
+    direction: rtl;
+  }
+  .dark-gold-theme .type-description-section h3 {
+    color: #ffd700;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+  .dark-gold-theme .type-description-section p {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 2;
+  }
+</style>
+<div class="question-box dark-gold-theme">
+  <h2>نتیجه تست شما</h2>
+  {% if enneagram_type %}
+    <div style="font-size: 1.2rem; margin-bottom: 18px;">
+      شخصیت شما به احتمال زیاد
+      <span class="main-type">
+        تایپ {{ enneagram_type }}
+      </span>
+      است.
+    </div>
+    <div class="type-counts">
+      {% if counts %}
+        {% for key, value in counts.items %}
+          <span class="type-count">
+            تایپ {{ key }}: <strong>{{ value }}</strong>
+          </span>
+        {% endfor %}
+      {% else %}
+        <span class="type-count">هیچ آماری موجود نیست.</span>
+      {% endif %}
+    </div>
+    <div class="type-description-section">
+      <h3>درباره‌ی تیپ {{ enneagram_type }}</h3>
+      <p>
+        {% if type_text %}
+        {{ type_text }}
+        {% else %}
+          توضیحی برای این تیپ وجود ندارد.
+        {% endif %}
+      </p>
+    </div>
+  {% else %}
+    <div class="no-answer">
+      هیچ جوابی داده نشده!
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

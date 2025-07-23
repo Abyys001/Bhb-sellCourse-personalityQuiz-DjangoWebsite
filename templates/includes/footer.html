@@ -1,0 +1,63 @@
+<!-- templates/includes/footer.html -->
+<footer class="footer bg-gradient-primary text-white py-4 mt-5 shadow-lg" style="background: linear-gradient(90deg, #232526 0%, #414345 100%);">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <div class="footer-logo mb-2 mb-md-0 me-3">
+                <span style="font-size: 1.5rem; font-weight: bold; letter-spacing: 1px;">
+                    <i class="fas fa-gem text-warning"></i>Bhbrand
+                </span>
+            </div>
+            <div class="enamad-logo">
+                <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=625860&Code=dM0ZqErS6YsFFOd1ni0WxrVpdVCRIqw3'>
+                    <img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=625860&Code=dM0ZqErS6YsFFOd1ni0WxrVpdVCRIqw3' alt='' style='cursor:pointer; height: 60px;' code='dM0ZqErS6YsFFOd1ni0WxrVpdVCRIqw3'>
+                </a>
+            </div>
+        </div>
+        <div class="footer-links mb-2 mb-md-0">
+            <a href="{% url 'home' %}" class="text-white mx-2 text-decoration-none footer-link">خانه</a>
+            <a href="{% url 'about' %}" class="text-white mx-2 text-decoration-none footer-link">درباره ما</a>
+        </div>
+        <div class="footer-copy d-flex align-items-center">
+            <p class="mb-0 small">
+                © تمامی حقوق محفوظ است {{ now|date:"Y" }}
+                <span class="mx-1">|</span>
+                ساخته شده با <i class="fas fa-heart text-danger"></i>
+            </p>
+        </div>
+    </div>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1 0 auto;
+        }
+        .footer-link:hover {
+            color: #ffc107 !important;
+            text-decoration: underline;
+        }
+        .footer {
+            box-shadow: 0 -2px 16px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+        @media (max-width: 768px) {
+            .enamad-logo img {
+                height: 50px !important;
+            }
+            .d-flex.align-items-center {
+                flex-direction: column;
+                align-items: flex-start !important;
+            }
+            .enamad-logo {
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <!-- Font Awesome CDN for icons (if not already included in your base template) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</footer>

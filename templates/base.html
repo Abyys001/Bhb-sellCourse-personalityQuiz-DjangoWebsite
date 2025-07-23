@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap RTL CSS -->
+  <link href="{% static 'css/bootstrap.rtl.min.css' %}" rel="stylesheet">
+
+  <style>
+    /* فونت سفارشی */
+    @font-face {
+      font-family: 'IranianSans';
+      src: url("{% static 'fonts/Estedad.ttf' %}") format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'IranianSans', sans-serif;
+      background-color: #000;
+      color: #f8f9fa; /* رنگ متن روشن برای حالت دارک */
+    }
+
+    .footer {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* می‌تونی بقیه تیترها و المنت‌ها رو هم فونت بدی */
+    h1, h2, h3, h4, h5, h6, a, p, button, input {
+      font-family: 'IranianSans', sans-serif;
+    }
+  </style>
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  {% include 'includes/navbar.html' %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'includes/footer.html' %}
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>

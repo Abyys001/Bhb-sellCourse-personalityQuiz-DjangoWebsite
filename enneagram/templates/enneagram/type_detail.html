@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}تیپ {{ type.type_number }} انیاگرام - {{ type.title }}{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background: #181818 !important;
+    }
+</style>
+<div class="enneagram-container" style="border-color: {{ type.color_code }};">
+    <div class="enneagram-header">
+        <h1>تیپ {{ type.type_number }}: {{ type.title }}</h1>
+        <p class="short-desc">{{ type.short_description }}</p>
+    </div>
+
+    <div class="enneagram-content">
+        <section class="type-section">
+            <h2 style="color: {{ type.color_code }};">معرفی تیپ</h2>
+            <div class="content-box">{{ type.overview|safe }}</div>
+        </section>
+
+        <div class="row">
+            <div class="col-md-6">
+                <section class="type-section">
+                    <h2 style="color: {{ type.color_code }};">نقاط قوت</h2>
+                    <div class="content-box">{{ type.strengths|safe }}</div>
+                </section>
+            </div>
+            <div class="col-md-6">
+                <section class="type-section">
+                    <h2 style="color: {{ type.color_code }};">نقاط ضعف</h2>
+                    <div class="content-box">{{ type.weaknesses|safe }}</div>
+                </section>
+            </div>
+        </div>
+
+        <section class="type-section">
+            <h2 style="color: {{ type.color_code }};">راهکارهای رشد</h2>
+            <div class="content-box">{{ type.growth_tips|safe }}</div>
+        </section>
+
+        <div class="row">
+            <div class="col-md-6">
+                <section class="type-section">
+                    <h2 style="color: {{ type.color_code }};">روابط</h2>
+                    <div class="content-box">{{ type.relationships|safe }}</div>
+                </section>
+            </div>
+            <div class="col-md-6">
+                <section class="type-section">
+                    <h2 style="color: {{ type.color_code }};">مسیر شغلی</h2>
+                    <div class="content-box">{{ type.career_paths|safe }}</div>
+                </section>
+            </div>
+        </div>
+
+        {% if type.famous_examples %}
+        <section class="type-section">
+            <h2 style="color: {{ type.color_code }};">افراد مشهور این تیپ</h2>
+            <div class="content-box">
+                <p>{{ type.famous_examples }}</p>
+            </div>
+        </section>
+        {% endif %}
+    </div>
+
+    {% if related_types %}
+    <div class="related-types">
+        <h3>تیپ‌های مرتبط</h3>
+        <div class="row">
+            {% for related in related_types %}
+            <div class="col-md-6">
+                <div class="related-card">
+                    <a href="{% url 'type_detail' related.type_number %}">
+                        <h4>تیپ {{ related.type_number }}: {{ related.title }}</h4>
+                        <p>{{ related.short_description }}</p>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<style>
+    .enneagram-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 30px;
+        background: #1a1a1a;
+        border-left: 5px solid;
+        border-radius: 0 8px 8px 0;
+        color: #f3f3f3; /* رنگ فونت روشن */
+    }
+    
+    .enneagram-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    /* .type-image حذف شد */
+    
+    .type-section {
+        margin-bottom: 30px;
+    }
+    
+    .content-box {
+        background: #222;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 15px;
+        color: #f3f3f3; /* رنگ فونت روشن */
+    }
+    
+    .related-types {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid #333;
+    }
+    
+    .related-card {
+        background: #222;
+        padding: 20px;
+        border-radius: 8px;
+        transition: transform 0.3s;
+        height: 100%;
+        color: #f3f3f3; /* رنگ فونت روشن */
+    }
+    
+    .related-card:hover {
+        transform: translateY(-5px);
+        background: #252525;
+    }
+    .type-section h2, .related-types h3, .related-card h4 {
+        color: #f3f3f3 !important; /* اطمینان از روشن بودن رنگ تیترها */
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,360 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="course-detail-section" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); min-height: 100vh; padding: 2rem 0;">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="course-header mb-5 text-center">
+      <div class="course-badge mb-3">
+        <span class="badge bg-gold text-white px-4 py-2 rounded-pill fw-bold">
+          <i class="fas fa-certificate me-2"></i>دوره تخصصی
+        </span>
+      </div>
+      <h1 class="course-title mb-3" style="color: #fff;">{{ course.title }}</h1>
+      <p class="course-subtitle mb-4" style="color: #f8f9fa; font-size: 1.15rem;">{{ course.description }}</p>
+    </div>
+
+    <div class="row">
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <!-- Lessons List (Simple Cards) -->
+        <style>
+          .accordion.bg-blackgold {
+            background: linear-gradient(135deg, #181818 80%, #FFD70022 100%);
+            border-radius: 1.2rem;
+            box-shadow: 0 0 18px #FFD70022;
+          }
+          .accordion-item.bg-blackgold {
+            background: #181818;
+            border: 1.5px solid #FFD700;
+            border-radius: 1rem !important;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 2px 12px #FFD70011;
+          }
+          .accordion-header .accordion-button.bg-blackgold {
+            background: linear-gradient(90deg, #181818 80%, #FFD70022 100%);
+            color: #FFD700;
+            font-weight: bold;
+            border-bottom: 1.5px solid #FFD700;
+            border-radius: 0.8rem 0.8rem 0 0;
+            box-shadow: none;
+            transition: background 0.2s, color 0.2s;
+          }
+          .accordion-header .accordion-button.bg-blackgold:not(.collapsed) {
+            background: #FFD700;
+            color: #181818;
+          }
+          .accordion-body.bg-blackgold {
+            background: #181818;
+            color: #FFD700;
+            border-top: 1px solid #FFD70033;
+          }
+          .lesson-description.bg-blackgold {
+            background: rgba(255,215,0,0.10);
+            border-left: 3px solid #FFD700;
+            color: #FFD700;
+          }
+          .btn-gold-black {
+            background: linear-gradient(90deg, #FFD700 60%, #181818 100%);
+            color: #181818;
+            border: 2px solid #FFD700;
+            font-weight: bold;
+            border-radius: 0.7rem;
+            transition: background 0.2s, color 0.2s;
+          }
+          .btn-gold-black:hover {
+            background: #181818;
+            color: #FFD700;
+          }
+        </style>
+        <div class="course-lessons mb-5">
+          <div class="accordion bg-blackgold" id="lessonsAccordion">
+            {% for lesson in course.lessons.all %}
+            <div class="accordion-item bg-blackgold">
+              <h3 class="accordion-header" id="heading{{ forloop.counter }}">
+                <button 
+                  class="accordion-button collapsed bg-blackgold" 
+                  type="button" 
+                  data-bs-toggle="collapse" 
+                  data-bs-target="#collapse{{ forloop.counter }}" 
+                  aria-expanded="false" 
+                  aria-controls="collapse{{ forloop.counter }}"
+                  style="border-bottom: 1.5px solid #FFD700;"
+                >
+                  <i class="fas fa-play-circle me-2"></i> {{ lesson.title }}
+                </button>
+              </h3>
+              <div 
+                id="collapse{{ forloop.counter }}" 
+                class="accordion-collapse collapse" 
+                aria-labelledby="heading{{ forloop.counter }}" 
+                data-bs-parent="#lessonsAccordion"
+              >
+                <div class="accordion-body p-4 bg-blackgold">
+                  <!-- محتوای درس -->
+                  {% if has_access %}
+                    {% if lesson.video_file %}
+                      <div class="ratio ratio-16x9 mb-4" style="border: 2px solid #FFD700; border-radius: 0.7rem; overflow: hidden;">
+                        <video controls class="w-100" poster="{{ lesson.image.url|default_if_none:'' }}">
+                          <source src="{{ lesson.video_file.url }}" type="video/mp4">
+                          مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند
+                        </video>
+                      </div>
+                    {% elif lesson.video_url %}
+                      <div class="ratio ratio-16x9 mb-4" style="border: 2px solid #FFD700; border-radius: 0.7rem; overflow: hidden;">
+                        <iframe src="{{ lesson.video_url }}" allowfullscreen style="background: #000;"></iframe>
+                      </div>
+                    {% endif %}
+                  {% else %}
+                    <div class="access-denied text-center p-4 bg-dark rounded mb-4">
+                      <i class="fas fa-lock fa-2x text-gold mb-3"></i>
+                      <h5 class="text-white">برای مشاهده این درس باید دوره را خریداری کنید</h5>
+                      <a href="{% url 'purchase_course' course.id %}" class="btn btn-gold-black mt-3">
+                        <i class="fas fa-shopping-cart me-2"></i>خرید دوره
+                      </a>
+                    </div>
+                  {% endif %}
+                  
+                  {% if lesson.attachment %}
+                  <a href="{{ lesson.attachment.url }}" class="btn btn-gold-black mb-4">
+                    <i class="fas fa-download me-2"></i> دانلود فایل ضمیمه
+                  </a>
+                  {% endif %}
+                  
+                  {% if lesson.description %}
+                  <div class="lesson-description p-3 rounded bg-blackgold">
+                    <h6 class="text-gold mb-2" style="color:#FFD700;">
+                      <i class="fas fa-info-circle me-2"></i>
+                      توضیحات درس:
+                    </h6>
+                    <p class="mb-0" style="color: #FFD700; font-weight: 500;">{{ lesson.description }}</p>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="course-sidebar sticky-top" style="top: 20px;">
+          <div class="card bg-dark border-gold mb-4">
+            <div class="card-header" style="background-color: #181818; color: #FFD700;">
+              <h4 class="mb-0" style="color: #FFD700;">
+                <i class="fas fa-info-circle me-2"></i>مشخصات دوره
+              </h4>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-dark text-light border-gold d-flex justify-content-between">
+                  <span><i class="fas fa-calendar-alt text-gold me-2"></i>تاریخ انتشار:</span>
+                  <span>{{ course.created_at|date:"Y/m/d" }}</span>
+                </li>
+                <li class="list-group-item bg-dark text-light border-gold d-flex justify-content-between">
+                  <span><i class="fas fa-coins text-gold me-2"></i>هزینه دوره:</span>
+                  <span class="text-gold fw-bold">{{ course.price }} تومان</span>
+                </li>
+                <li class="list-group-item bg-dark text-light border-gold d-flex justify-content-between">
+                  <span><i class="fas fa-book-open text-gold me-2"></i>تعداد درس‌ها:</span>
+                  <span>{{ course.lessons.count }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Purchase Box -->
+          <div class="card bg-dark border-gold">
+            <div class="card-header bg-dark border-bottom border-gold d-flex align-items-center justify-content-between" style="background: linear-gradient(90deg, #181818 60%, #FFD70022 100%); border-radius: 1rem 1rem 0 0; padding: 1.2rem 1.5rem;">
+              <div class="d-flex align-items-center">
+                <span class="rounded-circle d-flex align-items-center justify-content-center me-3" style="background: #FFD70022; width: 2.5rem; height: 2.5rem;">
+                  <i class="fas fa-shopping-cart text-gold" style="font-size: 1.3rem;"></i>
+                </span>
+                <h4 class="mb-0 fw-bold" style="color: #FFD700; font-size: 1.25rem; letter-spacing: 0.5px;">خرید دوره</h4>
+              </div>
+            </div>
+            <div class="card-body text-center" style="color: #fff;">
+              {% if has_access %}
+              <div class="alert alert-success bg-darker border-success mb-4 font-dark" style="color: #000;">
+                <i class="fas fa-check-circle me-2"></i>شما این دوره را خریداری کرده‌اید.
+              </div>
+              {% if course.lessons.first.video_url or course.lessons.first.video_file %}
+              <a href="#heading1" class="btn btn-gold w-100 py-3 fw-bold" style="color: #fff;" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                <i class="fas fa-play me-2"></i>شروع یادگیری
+              </a>
+              {% endif %}
+              {% else %}
+              <div class="price-display mb-4">
+                <div class="mb-1" style="color: #fff;">هزینه دوره:</div>
+                <div class="fw-bold" style="font-size: 2rem; color: #fff;">{{ course.price }} تومان</div>
+              </div>
+              
+              <form method="post" action="{% url 'purchase_course' course.id %}" class="mb-3">
+                {% csrf_token %}
+                <button type="submit"
+                        class="btn w-100 py-3 fw-bold"
+                        style="
+                          background: linear-gradient(90deg, #181818 60%, #FFD700 100%);
+                          color: #FFD700;
+                          border: 2px solid #FFD700;
+                          border-radius: 0.75rem;
+                          font-size: 1.2rem;
+                          box-shadow: 0 0 10px #FFD70044;
+                          transition: background 0.3s, color 0.3s;
+                        "
+                        onmouseover="this.style.background='#FFD700';this.style.color='#181818';"
+                        onmouseout="this.style.background='linear-gradient(90deg, #181818 60%, #FFD700 100%)';this.style.color='#FFD700';"
+                >
+                  <i class="fas fa-shopping-cart me-2"></i>
+                  خرید <span style="color:#fff; font-weight:bold;">دوره</span>
+                </button>
+              </form>
+            
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+<style>
+  /* Base Styles */
+  body {
+    background: #0a0a0a;
+    font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
+  }
+  
+  /* Text Colors */
+  .text-gold {
+    color: #FFD700 !important;
+  }
+  
+  /* Background Colors */
+  .bg-dark {
+    background-color: #1a1a1a !important;
+  }
+  .bg-darker {
+    background-color: #121212 !important;
+  }
+  
+  /* Borders */
+  .border-gold {
+    border-color: #FFD700 !important;
+  }
+  
+  /* Badges & Buttons */
+  .badge.bg-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #e0b800 100%) !important;
+    color: #222 !important;
+  }
+  .btn-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #e0b800 100%);
+    color: #222 !important;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  .btn-gold:hover {
+    background: linear-gradient(135deg, #e0b800 0%, #FFD700 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+  }
+  
+  /* Course Header */
+  .course-header {
+    padding: 2rem;
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 10px;
+    border: 1px solid #333;
+  }
+  .course-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .course-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  /* Accordion */
+  .accordion-button {
+    color: #FFD700;
+    font-weight: 600;
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: rgba(255, 215, 0, 0.05);
+    color: #FFD700;
+  }
+  .accordion-button:focus {
+    box-shadow: none;
+    border-color: #FFD700;
+  }
+  
+  /* List Items */
+  .list-group-item {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border-color: #333;
+    transition: all 0.2s ease;
+  }
+  .list-group-item:hover {
+    background-color: rgba(255, 215, 0, 0.05);
+  }
+  
+  /* Lesson Description */
+  .lesson-description {
+    transition: all 0.3s ease;
+  }
+  .lesson-description:hover {
+    background: rgba(0,0,0,0.3) !important;
+    border-left: 3px solid #e0b800 !important;
+  }
+  
+  /* Video Player */
+  video {
+    background: #000;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .course-title {
+      font-size: 1.8rem;
+    }
+    .lesson-description {
+      font-size: 0.9rem;
+    }
+  }
+  /* اضافه کردن این استایل‌ها به بخش style */
+.accordion-button {
+  color: #FFD700;
+  font-weight: 600;
+  background-color: #181818;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(255, 215, 0, 0.1);
+  color: #FFD700;
+  box-shadow: inset 0 -1px 0 rgba(255, 215, 0, 0.2);
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFD700'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
+  border-color: #FFD700;
+}
+
+.accordion-body {
+  background-color: #1a1a1a;
+}
+</style>

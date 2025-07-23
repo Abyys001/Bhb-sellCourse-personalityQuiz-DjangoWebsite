@@ -1,0 +1,1055 @@
+[
+    {
+      "text": "How do you react in stressful situations?",
+      "options": [
+        {"text": "I become passive and resistant", "enneagram_type": 9},
+        {"text": "I try to convince others of what the truth is", "enneagram_type": 1},
+        {"text": "My mind gets overwhelmed, and I can't do anything", "enneagram_type": 6},
+        {"text": "I become aggressive", "enneagram_type": 8}
+      ]
+    },
+    {
+      "text": "If your stress is ignored, how do you react?",
+      "options": [
+        {"text": "At first, I am passive, but eventually, I become reactive and more anxious", "enneagram_type": 9},
+        {"text": "At first, I react, but eventually, I become irritable and quiet", "enneagram_type": 1},
+        {"text": "I get very angry, and conflicts arise", "enneagram_type": 8},
+        {"text": "I become sad and resentful", "enneagram_type": 4}
+      ]
+    },
+    {
+      "text": "How do you react when others disagree with your beliefs?",
+      "options": [
+        {"text": "Since I know my beliefs are well-founded and logical, I try to convince them", "enneagram_type": 1},
+        {"text": "I don’t bother because I don’t have the patience for arguments or interactions", "enneagram_type": 9},
+        {"text": "They likely lack knowledge in this area, so I don’t see the point in debating", "enneagram_type": 5},
+        {"text": "It doesn’t matter to me because there are plenty of other things to enjoy", "enneagram_type": 7},
+        {"text": "I make them understand", "enneagram_type": 8}
+      ]
+    },
+    {
+      "text": "Which state do you prefer?",
+      "options": [
+        {"text": "Lots of work, little rest", "enneagram_type": 1},
+        {"text": "Little work, lots of rest", "enneagram_type": 9},
+        {"text": "Shining and success", "enneagram_type": 3},
+        {"text": "Variety and pleasure", "enneagram_type": 7},
+        {"text": "Dominance and helping the weak", "enneagram_type": 8},
+        {"text": "Charming and making others dependent on me", "enneagram_type": 2},
+        {"text": "Sad music and dwelling on sorrow", "enneagram_type": 4},
+        {"text": "Gaining knowledge and answering my mental questions", "enneagram_type": 5}
+      ]
+    },
+    {
+      "text": "In which state are you more comfortable?",
+      "options": [
+        {"text": "More relaxation and rest", "enneagram_type": 9},
+        {"text": "Relaxation and productive, organized work", "enneagram_type": 1},
+        {"text": "Loving", "enneagram_type": 2},
+        {"text": "Work first, emotions later", "enneagram_type": 3},
+        {"text": "Emotions first, work later", "enneagram_type": 4},
+        {"text": "A job with no fixed hours and variety", "enneagram_type": 7},
+        {"text": "Independence", "enneagram_type": 5},
+        {"text": "Peace of mind and reassurance", "enneagram_type": 6},
+        {"text": "New challenges and debates", "enneagram_type": 8}
+      ]
+    },
+    {
+      "text": "I try to understand people to...",
+      "options": [
+        {"text": "Know their needs and help them", "enneagram_type": 2},
+        {"text": "Interact with them based on rules and dos and don’ts", "enneagram_type": 1},
+        {"text": "I don’t need to understand them much because I create ideals in my mind and interact mentally without losing my peace", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "When I do a favor for others...",
+      "options": [
+        {"text": "I expect at least gratitude and appreciation for my efforts", "enneagram_type": 2},
+        {"text": "I don’t expect anything; being at peace is enough for me", "enneagram_type": 9},
+        {"text": "They should show proper respect and follow etiquette; that’s enough", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "When others need my help, I feel...",
+      "options": [
+        {"text": "Very good, and I strive to help them more", "enneagram_type": 2},
+        {"text": "It doesn’t matter to me", "enneagram_type": 9},
+        {"text": "Happy if it’s my duty", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "If I’m not thanked enough...",
+      "options": [
+        {"text": "I stay silent, and it doesn’t matter to me", "enneagram_type": 9},
+        {"text": "They should know how much I’ve done for them. I can’t stay silent", "enneagram_type": 2},
+        {"text": "I will still do what is right", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "When I lose my temper...",
+      "options": [
+        {"text": "I leave the place and try to stay calm", "enneagram_type": 9},
+        {"text": "I become aggressive", "enneagram_type": 2},
+        {"text": "I behave according to the defined principles of that place and people", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "I am willing to... for others",
+      "options": [
+        {"text": "Put myself in danger to help them", "enneagram_type": 2},
+        {"text": "Make the atmosphere less peaceful but not express my hurt", "enneagram_type": 9},
+        {"text": "Explain more to teach them the right path", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "If there’s a path to help others, I am willing to...",
+      "options": [
+        {"text": "Go with them, even if it takes a long time and I have to sacrifice my own tasks", "enneagram_type": 2},
+        {"text": "Prefer to guide them because I don’t have enough energy to go the distance", "enneagram_type": 9},
+        {"text": "Check my pre-defined schedule and see how much time it will take", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "To stay motivated...",
+      "options": [
+        {"text": "I am full of motivation, but if someone close to me encourages and trusts me, my motivation multiplies", "enneagram_type": 3},
+        {"text": "I need support and praise from others", "enneagram_type": 9},
+        {"text": "Order, rules, and justice are enough", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "What do you think about while working?",
+      "options": [
+        {"text": "My break time", "enneagram_type": 9},
+        {"text": "The exact time tasks are completed", "enneagram_type": 1},
+        {"text": "Progress, working again, and people who will see my success", "enneagram_type": 3},
+        {"text": "How to help more and satisfy the employer", "enneagram_type": 2}
+      ]
+    },
+    {
+      "text": "In my imagination, I always...",
+      "options": [
+        {"text": "Create comforting fantasies and imagine everything easily", "enneagram_type": 9},
+        {"text": "Imagine sad and tragic endings", "enneagram_type": 4},
+        {"text": "Imagine others can’t live without me", "enneagram_type": 2},
+        {"text": "Shine like a star and succeed", "enneagram_type": 3},
+        {"text": "Imagine someone is threatening me", "enneagram_type": 6},
+        {"text": "Make everything positive", "enneagram_type": 7},
+        {"text": "Imagine everyone fears me", "enneagram_type": 8},
+        {"text": "Imagine the world is uncertain, and people are even more uncertain", "enneagram_type": 5}
+      ]
+    },
+    {
+      "text": "I distance myself from others to...",
+      "options": [
+        {"text": "Have enough time to immerse myself in my emotions", "enneagram_type": 4},
+        {"text": "Live peacefully without threats or disturbances from others", "enneagram_type": 9},
+        {"text": "Avoid anxiety and dependency", "enneagram_type": 6},
+        {"text": "Have enough time for my defined tasks and duties", "enneagram_type": 1},
+        {"text": "Make them appreciate me", "enneagram_type": 2},
+        {"text": "Focus on my work", "enneagram_type": 3},
+        {"text": "Focus on my goals", "enneagram_type": 8},
+        {"text": "Avoid losing control", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "When faced with something that upsets me...",
+      "options": [
+        {"text": "My emotions get involved, and sometimes I exaggerate", "enneagram_type": 4},
+        {"text": "I try to suppress my feelings to stay at ease", "enneagram_type": 9},
+        {"text": "I react firmly and get angry", "enneagram_type": 1},
+        {"text": "I become stubborn and eventually aggressive", "enneagram_type": 2},
+        {"text": "I become indifferent because there are more important things", "enneagram_type": 3},
+        {"text": "I withdraw", "enneagram_type": 5},
+        {"text": "I distance myself to avoid danger", "enneagram_type": 6},
+        {"text": "Quickly improve my mood with something new and deny it", "enneagram_type": 7},
+        {"text": "Confront it angrily", "enneagram_type": 8}
+      ]
+    },
+    {
+      "text": "I distance myself when...",
+      "options": [
+        {"text": "Others hurt me", "enneagram_type": 4},
+        {"text": "I am withdrawn both internally and externally", "enneagram_type": 9},
+        {"text": "I decide I need to distance myself", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "I see the world as...",
+      "options": [
+        {"text": "Positive and hopeful for the future", "enneagram_type": 8},
+        {"text": "Worrisome, and I expect bad things to happen", "enneagram_type": 4}
+      ]
+    },
+    {
+      "text": "When something occupies my mind...",
+      "options": [
+        {"text": "I think about it, but I lose track and prefer to leave it halfway to stay at peace", "enneagram_type": 9},
+        {"text": "I think about it until I find the reasons and focus intensely on solving the problem", "enneagram_type": 5},
+        {"text": "I distract myself", "enneagram_type": 7},
+        {"text": "I must solve it, or I can’t sleep", "enneagram_type": 6},
+        {"text": "I choose a clear path to solve it", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "When a problem arises...",
+      "options": [
+        {"text": "I think about it broadly and try to resolve it quickly, ending optimistically", "enneagram_type": 9},
+        {"text": "I think about it in detail and continuously, linking it to the next problem, and so on", "enneagram_type": 5},
+        {"text": "I quickly find a solution", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "I easily connect with people...",
+      "options": [
+        {"text": "Yes, I do", "enneagram_type": 9},
+        {"text": "No, because my ideas are complex, and only experts understand me", "enneagram_type": 5}
+      ]
+    },
+    {
+      "text": "The outcome of my actions is important...",
+      "options": [
+        {"text": "No", "enneagram_type": 9},
+        {"text": "I predict it beforehand", "enneagram_type": 5}
+      ]
+    },
+    {
+      "text": "My world is...",
+      "options": [
+        {"text": "Idealistic, and positivity always triumphs over negativity", "enneagram_type": 9},
+        {"text": "Scary, and negativity triumphs over positivity because I always analyze it", "enneagram_type": 5}
+      ]
+    },
+    {
+      "text": "I simplify things... in my mind",
+      "options": [
+        {"text": "Yes", "enneagram_type": 9},
+        {"text": "No, I complicate them", "enneagram_type": 5}
+      ]
+    },
+    {
+      "text": "I always think about...",
+      "options": [
+        {"text": "The past", "enneagram_type": 9},
+        {"text": "The future", "enneagram_type": 5}
+      ]
+    },
+    {
+      "text": "I am a... person",
+      "options": [
+        {"text": "Dreamer", "enneagram_type": 9},
+        {"text": "Theorist", "enneagram_type": 5},
+        {"text": "Organized and nervous", "enneagram_type": 1},
+        {"text": "Talkative", "enneagram_type": 2},
+        {"text": "Motivated and hardworking", "enneagram_type": 3},
+        {"text": "Dreamy", "enneagram_type": 4},
+        {"text": "Strong sixth sense", "enneagram_type": 6},
+        {"text": "Humorous and excessive", "enneagram_type": 7},
+        {"text": "Influential and firm", "enneagram_type": 8}
+      ]
+    },
+    {
+      "text": "Most of the time, I am...",
+      "options": [
+        {"text": "At peace", "enneagram_type": 9},
+        {"text": "In tension", "enneagram_type": 5}
+      ]
+    },
+    {
+      "text": "My reaction to life's ups and downs is...",
+      "options": [
+        {"text": "I try not to show it and stay calm", "enneagram_type": 9},
+        {"text": "I get angry and react due to anxiety", "enneagram_type": 6},
+        {"text": "I become emotional but distract myself with work", "enneagram_type": 7},
+        {"text": "I become depressed and lonely", "enneagram_type": 4},
+        {"text": "I get nervous and anxious but keep going", "enneagram_type": 1},
+        {"text": "I react", "enneagram_type": 2},
+        {"text": "I am decisive", "enneagram_type": 8}
+      ]
+    },
+    {
+      "text": "In a new and unfamiliar situation...",
+      "options": [
+        {"text": "I thoroughly examine all aspects before getting too close", "enneagram_type": 6},
+        {"text": "I am easygoing and optimistic", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "When tension arises, I prefer silence because...",
+      "options": [
+        {"text": "It’s better to avoid tension to maintain peace and leave good memories on both sides", "enneagram_type": 9},
+        {"text": "No one should know how anxious I am", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "When stress comes...",
+      "options": [
+        {"text": "I become excessive and work a lot", "enneagram_type": 7},
+        {"text": "I stay silent and can’t do anything", "enneagram_type": 9},
+        {"text": "I become aggressive, and my mind gets overwhelmed", "enneagram_type": 6},
+        {"text": "I focus on one thing and insist I’m right till the end", "enneagram_type": 8},
+        {"text": "I work faster", "enneagram_type": 1},
+        {"text": "I find a new way to express myself and be loved", "enneagram_type": 2},
+        {"text": "I need praise to get moving again", "enneagram_type": 3},
+        {"text": "Others are to blame", "enneagram_type": 4},
+        {"text": "My mind goes to abnormality, and I talk to myself", "enneagram_type": 5}
+      ]
+    },
+    {
+      "text": "I welcome emotions...",
+      "options": [
+        {"text": "Yes", "enneagram_type": 7},
+        {"text": "No", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "Arguments and conflicts excite me...",
+      "options": [
+        {"text": "No", "enneagram_type": 9},
+        {"text": "Yes", "enneagram_type": 8}
+      ]
+    },
+    {
+      "text": "In chaotic situations, I try to...",
+      "options": [
+        {"text": "Defend myself firmly, and often, fighting is necessary", "enneagram_type": 8},
+        {"text": "Stay silent and agree to maintain my peace", "enneagram_type": 9},
+        {"text": "Get stressed and complain", "enneagram_type": 1},
+        {"text": "Avoid it", "enneagram_type": 7},
+        {"text": "Seek safety and a way out", "enneagram_type": 6}
+      ]
+    },
+    {
+      "text": "I feel satisfied in interactions when...",
+      "options": [
+        {"text": "I find vitality and liveliness", "enneagram_type": 9},
+        {"text": "I see approval, value, and identity", "enneagram_type": 3},
+        {"text": "They are trustworthy guides for me", "enneagram_type": 6},
+        {"text": "They trust me", "enneagram_type": 1},
+        {"text": "They admire my creative mind", "enneagram_type": 4},
+        {"text": "They feel my presence or absence", "enneagram_type": 2},
+        {"text": "They don’t argue with me or demand a very close relationship", "enneagram_type": 5},
+        {"text": "They leave me alone and don’t assign me responsibilities", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "To start a task, I...",
+      "options": [
+        {"text": "Can form a team, organize everyone, and define tasks clearly", "enneagram_type": 1},
+        {"text": "Can introduce many friends, colleagues, and acquaintances and help myself", "enneagram_type": 2},
+        {"text": "Need someone who knows I am very talented and brilliant to prove they are right about me", "enneagram_type": 3},
+        {"text": "Need a romantic, colorful space with flowers, animals, beauty, and soft music", "enneagram_type": 4},
+        {"text": "Need solitude and experts", "enneagram_type": 5},
+        {"text": "Need safe and trusted colleagues and a space to uncover hidden aspects for peace of mind", "enneagram_type": 6},
+        {"text": "Need free time, lots of money, and multiple tasks to combine and complete", "enneagram_type": 7},
+        {"text": "Need my personal space to decide when to engage or not", "enneagram_type": 8},
+        {"text": "Need lots of rest, and it’s better if someone tells me what to do or not", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "I was in a toxic relationship, but...",
+      "options": [
+        {"text": "It gave me confidence, and they saw me as successful", "enneagram_type": 3},
+        {"text": "In some ways, they were trustworthy where others weren’t", "enneagram_type": 6},
+        {"text": "We had such peaceful moments that I preferred to stay", "enneagram_type": 9},
+        {"text": "They were weak, and I wanted to protect them", "enneagram_type": 8},
+        {"text": "They needed me intensely", "enneagram_type": 2},
+        {"text": "They saw my beauty", "enneagram_type": 4},
+        {"text": "We could talk for hours and reach a conclusion", "enneagram_type": 5},
+        {"text": "Sometimes it had good moments", "enneagram_type": 7},
+        {"text": "They were conscientious", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "People who disagree with my path...",
+      "options": [
+        {"text": "I push them aside with full force", "enneagram_type": 8},
+        {"text": "I convince them", "enneagram_type": 1}
+      ]
+    },
+    {
+      "text": "I can’t stand seeing...",
+      "options": [
+        {"text": "Injustice to a weak person; I react immediately", "enneagram_type": 8},
+        {"text": "Disorder and injustice in the environment and relationships", "enneagram_type": 1},
+        {"text": "Someone underestimating me or surpassing me", "enneagram_type": 3},
+        {"text": "My efforts being ignored", "enneagram_type": 2},
+        {"text": "Injustice to living creatures, animals, and nature", "enneagram_type": 4},
+        {"text": "People living meaningless lives", "enneagram_type": 5},
+        {"text": "Someone stabbing me in the back", "enneagram_type": 6},
+        {"text": "Being asked to do the same repetitive task every day", "enneagram_type": 7},
+        {"text": "Being alone with no one to guide me", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "It’s important to me...",
+      "options": [
+        {"text": "To be at the top of power", "enneagram_type": 8},
+        {"text": "To follow the rules", "enneagram_type": 1},
+        {"text": "To be helpful", "enneagram_type": 2},
+        {"text": "To flourish my talents and achieve fame", "enneagram_type": 3},
+        {"text": "To find my emotions and see my dreams in life", "enneagram_type": 4},
+        {"text": "To be logical", "enneagram_type": 5},
+        {"text": "To trust and not be in danger", "enneagram_type": 6},
+        {"text": "To have the most expensive and abundant things", "enneagram_type": 7},
+        {"text": "Not to get involved with people", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "It’s important for me to see...",
+      "options": [
+        {"text": "Sinners punished fairly and disciplined, balanced people rewarded", "enneagram_type": 1},
+        {"text": "Others recognize my power and rely on me in tough situations", "enneagram_type": 8},
+        {"text": "The world reaching peace and reconciliation", "enneagram_type": 4},
+        {"text": "Achieving my desires faster than others", "enneagram_type": 3}
+      ]
+    },
+    {
+      "text": "If someone hurts me...",
+      "options": [
+        {"text": "I take revenge because they must pay", "enneagram_type": 8},
+        {"text": "I analyze and think about it", "enneagram_type": 1},
+        {"text": "First, I react aggressively, then I stay silent", "enneagram_type": 6},
+        {"text": "I am patient", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "When I’m upset with someone, I express it...",
+      "options": [
+        {"text": "Secretly hold my feelings and show my displeasure indirectly", "enneagram_type": 2},
+        {"text": "Quickly and easily, without fear", "enneagram_type": 8},
+        {"text": "I restrain myself", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "I am known for...",
+      "options": [
+        {"text": "Courage", "enneagram_type": 8},
+        {"text": "Success", "enneagram_type": 3},
+        {"text": "Strange and new styles", "enneagram_type": 4},
+        {"text": "Patience and restraint", "enneagram_type": 9},
+        {"text": "Conscience and justice", "enneagram_type": 1},
+        {"text": "Having many friends", "enneagram_type": 2},
+        {"text": "Talkativeness, negativity, and solitude", "enneagram_type": 5},
+        {"text": "Being skeptical", "enneagram_type": 6},
+        {"text": "Being fun-loving and irresponsible", "enneagram_type": 7},
+        {"text": "Being inactive and dependent", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "I need...",
+      "options": [
+        {"text": "My own will", "enneagram_type": 8},
+        {"text": "An important and reliable companion", "enneagram_type": 3},
+        {"text": "Support", "enneagram_type": 9},
+        {"text": "Love and attention", "enneagram_type": 4},
+        {"text": "Knowledge and science", "enneagram_type": 5},
+        {"text": "Continuous thought", "enneagram_type": 7},
+        {"text": "Self-confidence", "enneagram_type": 6},
+        {"text": "A bit of humor and carefreeness", "enneagram_type": 1},
+        {"text": "Loving without expectations", "enneagram_type": 2}
+      ]
+    },
+    {
+      "text": "I am a... person",
+      "options": [
+        {"text": "Powerful", "enneagram_type": 8},
+        {"text": "Successful", "enneagram_type": 3},
+        {"text": "Seeker", "enneagram_type": 6},
+        {"text": "Sensitive and pragmatic", "enneagram_type": 4},
+        {"text": "Punctual and serious", "enneagram_type": 1},
+        {"text": "Generous", "enneagram_type": 2},
+        {"text": "Inactive", "enneagram_type": 5},
+        {"text": "Cheerful and jokey", "enneagram_type": 7},
+        {"text": "Calm and agreeable", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "I am...",
+      "options": [
+        {"text": "A leader and guide", "enneagram_type": 8},
+        {"text": "A manager and expert", "enneagram_type": 3},
+        {"text": "A caretaker and worrier", "enneagram_type": 1},
+        {"text": "Good with words and tactful", "enneagram_type": 2},
+        {"text": "Calm and romantic", "enneagram_type": 4},
+        {"text": "Preoccupied", "enneagram_type": 5},
+        {"text": "Avoiding to prevent stress", "enneagram_type": 7},
+        {"text": "Perceptive and smart", "enneagram_type": 6},
+        {"text": "A compromiser", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "If I face failure in my career...",
+      "options": [
+        {"text": "I start again more firmly", "enneagram_type": 8},
+        {"text": "Others’ opinions deeply affect me", "enneagram_type": 3},
+        {"text": "I try a new method and stay optimistic", "enneagram_type": 7},
+        {"text": "I get stressed and doubt my abilities unless someone says otherwise", "enneagram_type": 6},
+        {"text": "I lose my temper, and someone is to blame", "enneagram_type": 2},
+        {"text": "I become disappointed and depressed", "enneagram_type": 1},
+        {"text": "I can’t calm my mind for a while and blame myself", "enneagram_type": 5},
+        {"text": "It’s hard to start again unless someone helps me", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "Most of the time...",
+      "options": [
+        {"text": "I easily reclaim my rights and retaliate openly", "enneagram_type": 8},
+        {"text": "I retaliate secretly but briefly", "enneagram_type": 3},
+        {"text": "I don’t care", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "My childhood memories...",
+      "options": [
+        {"text": "Are behind me", "enneagram_type": 8},
+        {"text": "I can’t forget", "enneagram_type": 4},
+        {"text": "Are motivation for my future", "enneagram_type": 3},
+        {"text": "I revisit", "enneagram_type": 6},
+        {"text": "I learn from them", "enneagram_type": 5},
+        {"text": "Are beautiful to me", "enneagram_type": 7},
+        {"text": "I’ve forgotten them; it’s easier this way", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "In case of a problem...",
+      "options": [
+        {"text": "I retreat", "enneagram_type": 5},
+        {"text": "I confront it", "enneagram_type": 8},
+        {"text": "I need to prove something to myself", "enneagram_type": 6},
+        {"text": "I quickly dismiss it", "enneagram_type": 7},
+        {"text": "I get scared and feel weak", "enneagram_type": 4},
+        {"text": "I resolve it", "enneagram_type": 1},
+        {"text": "I fix it logically or illogically", "enneagram_type": 2}
+      ]
+    },
+    {
+      "text": "My conflicts with others are due to...",
+      "options": [
+        {"text": "Stress from hardships", "enneagram_type": 6},
+        {"text": "Firmness to achieve my desired result", "enneagram_type": 8},
+        {"text": "Ingratitude", "enneagram_type": 2},
+        {"text": "Being ignored", "enneagram_type": 4},
+        {"text": "Disturbing my solitude", "enneagram_type": 5},
+        {"text": "Deceit and secrecy", "enneagram_type": 6},
+        {"text": "Causing trouble", "enneagram_type": 7},
+        {"text": "Their insistence on conflict; I don’t argue with anyone", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "My greatest fear...",
+      "options": [
+        {"text": "Is dependency", "enneagram_type": 6},
+        {"text": "Is weakness", "enneagram_type": 8}
+      ]
+    },
+    {
+      "text": "I don’t want...",
+      "options": [
+        {"text": "Others to disobey me", "enneagram_type": 8},
+        {"text": "To be forced to do something", "enneagram_type": 6}
+      ]
+    },
+    {
+      "text": "Under pressure...",
+      "options": [
+        {"text": "I become more aggressive and irritable", "enneagram_type": 8},
+        {"text": "I eventually surrender", "enneagram_type": 6}
+      ]
+    },
+    {
+      "text": "I am a...",
+      "options": [
+        {"text": "Optimistic idealist", "enneagram_type": 7},
+        {"text": "Hardcore realist", "enneagram_type": 8}
+      ]
+    },
+    {
+      "text": "I should...",
+      "options": [
+        {"text": "See diverse things and people to add to my experiences", "enneagram_type": 7},
+        {"text": "Focus on one project and stable people", "enneagram_type": 8}
+      ]
+    },
+    {
+      "text": "When a problem arises, eventually...",
+      "options": [
+        {"text": "I become angrier and more aggressive", "enneagram_type": 8},
+        {"text": "I become more passive, depressed, and agreeable", "enneagram_type": 9}
+      ]
+    },
+    {
+      "text": "I get upset if...",
+      "options": [
+        {"text": "A straight line in my notebook or clothes is crooked, or I see disorder", "enneagram_type": 1},
+        {"text": "Things don’t go according to my taste and desires", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "My outlook on the future is usually...",
+      "options": [
+        {"text": "Disappointing", "enneagram_type": 1},
+        {"text": "I am visionary and create meaning for myself", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "I...",
+      "options": [
+        {"text": "Am sure of my purpose in life", "enneagram_type": 1},
+        {"text": "Feel like I know my purpose", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "I’m more comfortable if...",
+      "options": [
+        {"text": "Everything is uniform and orderly, as in the past", "enneagram_type": 1},
+        {"text": "It’s varied and new to change my mood", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "If I drive the same route repeatedly...",
+      "options": [
+        {"text": "I feel very satisfied and reassured", "enneagram_type": 1},
+        {"text": "I get bored and try new routes", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "I’m happy when my friends...",
+      "options": [
+        {"text": "Entertain me and we have good times", "enneagram_type": 7},
+        {"text": "Need my help", "enneagram_type": 2}
+      ]
+    },
+    {
+      "text": "I want to be with my friends...",
+      "options": [
+        {"text": "Close and intimate", "enneagram_type": 2},
+        {"text": "Just have fun and not limit my freedom", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "I prefer the happy and unique moments of my life to be...",
+      "options": [
+        {"text": "Seen by others", "enneagram_type": 3},
+        {"text": "Unseen by others", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "I know...",
+      "options": [
+        {"text": "My plans and strategies for the future are excellent", "enneagram_type": 7},
+        {"text": "My ability to do the task at hand is high", "enneagram_type": 3}
+      ]
+    },
+    {
+      "text": "When I appear very confident, it’s because...",
+      "options": [
+        {"text": "I’m escaping my anxieties", "enneagram_type": 7},
+        {"text": "I’m successful in my work", "enneagram_type": 3}
+      ]
+    },
+    {
+      "text": "Objects should be...",
+      "options": [
+        {"text": "Beautiful and poetic", "enneagram_type": 4},
+        {"text": "Beautiful and expensive", "enneagram_type": 7}
+      ]
+    },
+    {
+      "text": "I buy new things to...",
+      "options": [
+        {"text": "Feel more secure", "enneagram_type": 7},
+        {"text": "Be seen as beautiful", "enneagram_type": 4}
+      ]
+    },
+        {
+          "text": "After a while, my clothes...",
+          "options": [
+            {"text": "Are no longer interesting", "enneagram_type": 7},
+            {"text": "Are disposable", "enneagram_type": 4}
+          ]
+        },
+        {
+          "text": "I prefer...",
+          "options": [
+            {"text": "To be alone and study", "enneagram_type": 5},
+            {"text": "To be in a crowd but get bored quickly", "enneagram_type": 7}
+          ]
+        },
+        {
+          "text": "Most of the time...",
+          "options": [
+            {"text": "I see the positive side", "enneagram_type": 7},
+            {"text": "I can't see things positively", "enneagram_type": 5}
+          ]
+        },
+        {
+          "text": "When it comes to committing to something...",
+          "options": [
+            {"text": "I hate it", "enneagram_type": 7},
+            {"text": "I welcome it", "enneagram_type": 6}
+          ]
+        },
+        {
+          "text": "I always consider the...",
+          "options": [
+            {"text": "Negative and scary side as a form of prevention", "enneagram_type": 6},
+            {"text": "Positive side", "enneagram_type": 7}
+          ]
+        },
+        {
+          "text": "When it comes to understanding how my mind works...",
+          "options": [
+            {"text": "I avoid it", "enneagram_type": 7},
+            {"text": "I welcome it", "enneagram_type": 6}
+          ]
+        },
+        {
+          "text": "At work...",
+          "options": [
+            {"text": "I love variety", "enneagram_type": 7},
+            {"text": "I love focusing on one topic", "enneagram_type": 8}
+          ]
+        },
+        {
+          "text": "Regarding the work I do...",
+          "options": [
+            {"text": "I am confident", "enneagram_type": 1},
+            {"text": "I doubt it and need others to confirm or test it", "enneagram_type": 6}
+          ]
+        },
+        {
+          "text": "If I become pessimistic...",
+          "options": [
+            {"text": "I express it in words and articulate it properly", "enneagram_type": 1},
+            {"text": "I get stressed and stop trusting", "enneagram_type": 6}
+          ]
+        },
+        {
+          "text": "I support...",
+          "options": [
+            {"text": "Balance, justice, and order", "enneagram_type": 1},
+            {"text": "Stability, assurance, and security", "enneagram_type": 6}
+          ]
+        },
+        {
+          "text": "People who enter my life...",
+          "options": [
+            {"text": "Are those I fully trust", "enneagram_type": 6},
+            {"text": "Are those who are close and need my companionship and help", "enneagram_type": 2}
+          ]
+        },
+        {
+          "text": "I like...",
+          "options": [
+            {"text": "To trust a little so I can become dependent", "enneagram_type": 6},
+            {"text": "Others to depend on me", "enneagram_type": 2}
+          ]
+        },
+        {
+          "text": "If dependency develops...",
+          "options": [
+            {"text": "I become anxious", "enneagram_type": 6},
+            {"text": "I become happier", "enneagram_type": 2}
+          ]
+        },
+        {
+          "text": "I am someone who is...",
+          "options": [
+            {"text": "Reserved and calm", "enneagram_type": 3},
+            {"text": "Angry and stressed", "enneagram_type": 6}
+          ]
+        },
+        {
+          "text": "I feel good if...",
+          "options": [
+            {"text": "I impress others so they like me", "enneagram_type": 6},
+            {"text": "I feel loneliness and sadness", "enneagram_type": 4}
+          ]
+        },
+        {
+          "text": "I get depressed if...",
+          "options": [
+            {"text": "I don't find myself", "enneagram_type": 4},
+            {"text": "Others don't approve of my work or find flaws in it", "enneagram_type": 6}
+          ]
+        },
+        {
+          "text": "Regarding art, I prefer...",
+          "options": [
+            {"text": "To be a listener and viewer", "enneagram_type": 6},
+            {"text": "To create something new", "enneagram_type": 4}
+          ]
+        },
+        {
+          "text": "I am interested in understanding...",
+          "options": [
+            {"text": "Politics and countries", "enneagram_type": 6},
+            {"text": "The deep emotions within me", "enneagram_type": 4}
+          ]
+        },
+        {
+          "text": "When gathering information...",
+          "options": [
+            {"text": "I refer to sources with skepticism", "enneagram_type": 6},
+            {"text": "I trust myself, my knowledge, and my thoughts", "enneagram_type": 5}
+          ]
+        },
+        {
+          "text": "I feel safer if...",
+          "options": [
+            {"text": "I follow a fixed method", "enneagram_type": 1},
+            {"text": "I occasionally deviate from stability", "enneagram_type": 5}
+          ]
+        },
+        {
+          "text": "In scientific discussions...",
+          "options": [
+            {"text": "I must prove the other person wrong", "enneagram_type": 5},
+            {"text": "I don't back down from my position", "enneagram_type": 1}
+          ]
+        },
+        {
+          "text": "Knowledge helps me to...",
+          "options": [
+            {"text": "Understand rules and principles and help others", "enneagram_type": 1},
+            {"text": "Explore my mind and understand the world", "enneagram_type": 5}
+          ]
+        },
+        {
+          "text": "Within every issue...",
+          "options": [
+            {"text": "There is a final must", "enneagram_type": 1},
+            {"text": "There is a new path", "enneagram_type": 5}
+          ]
+        },
+        {
+          "text": "Most of the time, I am...",
+          "options": [
+            {"text": "Teaching", "enneagram_type": 1},
+            {"text": "Searching and inventing a new idea or method", "enneagram_type": 5}
+          ]
+        },
+        {
+          "text": "I am often around others to...",
+          "options": [
+            {"text": "Avoid feeling lonely", "enneagram_type": 5},
+            {"text": "Be able to do something or help others", "enneagram_type": 2},
+            {"text": "Learn how they achieved success", "enneagram_type": 3}
+          ]
+        },
+        {
+          "text": "Most of the time...",
+          "options": [
+            {"text": "I avoid crowds and people", "enneagram_type": 5},
+            {"text": "I go to my friends or make new friends", "enneagram_type": 2}
+          ]
+        },
+        {
+          "text": "Regarding my successes...",
+          "options": [
+            {"text": "I talk to others and seek advice", "enneagram_type": 3},
+            {"text": "I stay silent and move forward alone", "enneagram_type": 5}
+          ]
+        },
+        {
+          "text": "I always...",
+          "options": [
+            {"text": "Dress well and stylishly", "enneagram_type": 3},
+            {"text": "Don't care about how I dress and prefer simplicity", "enneagram_type": 5}
+          ]
+        },
+        {
+          "text": "Most of the time...",
+          "options": [
+            {"text": "My feelings and emotions matter to me", "enneagram_type": 4},
+            {"text": "My mind and way of thinking matter to me", "enneagram_type": 5}
+          ]
+        },
+        {
+          "text": "In theory, I excel, but in practice...",
+          "options": [
+            {"text": "I am passive", "enneagram_type": 5},
+            {"text": "I am active", "enneagram_type": 6}
+          ]
+        },
+        {
+          "text": "I am known for...",
+          "options": [
+            {"text": "Blending plans well", "enneagram_type": 7},
+            {"text": "Focusing on one topic and exploring it", "enneagram_type": 5},
+            {"text": "Skepticism and attention to detail", "enneagram_type": 6},
+            {"text": "Following order and standards", "enneagram_type": 1},
+            {"text": "Having many friends and helping", "enneagram_type": 2},
+            {"text": "Losing my temper quickly", "enneagram_type": 8},
+            {"text": "Being emotional", "enneagram_type": 4},
+            {"text": "Achieving success and dressing stylishly", "enneagram_type": 3},
+            {"text": "Patience", "enneagram_type": 9}
+          ]
+        },
+        {
+          "text": "Trusting others...",
+          "options": [
+            {"text": "Is my guiding principle", "enneagram_type": 9},
+            {"text": "Is a mistake", "enneagram_type": 5},
+            {"text": "Is not possible without testing and trying first", "enneagram_type": 6}
+          ]
+        },
+        {
+          "text": "When separating from someone I cared about...",
+          "options": [
+            {"text": "I argue a lot", "enneagram_type": 5},
+            {"text": "I stay silent and leave", "enneagram_type": 9},
+            {"text": "I withdrew and thought about suicide", "enneagram_type": 4},
+            {"text": "I kept myself busy with work to forget", "enneagram_type": 3},
+            {"text": "We had a tough fight, but I won", "enneagram_type": 8},
+            {"text": "I quickly replaced them with someone new to ease the pain", "enneagram_type": 7},
+            {"text": "I followed principles and logic", "enneagram_type": 1}
+          ]
+        },
+        {
+          "text": "My mental priority is...",
+          "options": [
+            {"text": "Responsibility, then emotions", "enneagram_type": 1},
+            {"text": "Emotions, then responsibility", "enneagram_type": 4},
+            {"text": "My fears", "enneagram_type": 6},
+            {"text": "My career and social status", "enneagram_type": 3},
+            {"text": "My solitude", "enneagram_type": 5},
+            {"text": "My freedom", "enneagram_type": 7},
+            {"text": "My power", "enneagram_type": 8},
+            {"text": "My peace", "enneagram_type": 9},
+            {"text": "Being loved", "enneagram_type": 2}
+          ]
+        },
+        {
+          "text": "If I encounter opposition...",
+          "options": [
+            {"text": "I get angry and impose my opinions because I know I've thought correctly about them", "enneagram_type": 1},
+            {"text": "I distance myself", "enneagram_type": 4},
+            {"text": "It depends on who the person is", "enneagram_type": 3},
+            {"text": "I become furious", "enneagram_type": 8},
+            {"text": "I change the topic with jokes and laughter", "enneagram_type": 7},
+            {"text": "They probably lack enough knowledge to debate", "enneagram_type": 5},
+            {"text": "I adapt", "enneagram_type": 9}
+          ]
+        },
+        {
+          "text": "My priority is...",
+          "options": [
+            {"text": "Work first, then emotions if I have time", "enneagram_type": 3},
+            {"text": "Emotions first, then work", "enneagram_type": 4},
+            {"text": "Trusting others", "enneagram_type": 6},
+            {"text": "Security and peace", "enneagram_type": 9},
+            {"text": "Status and power", "enneagram_type": 8},
+            {"text": "Justice", "enneagram_type": 1},
+            {"text": "Others needing me and relying on my help", "enneagram_type": 2},
+            {"text": "Drawing conclusions and knowing the truths of the world", "enneagram_type": 5},
+            {"text": "Happiness and freedom", "enneagram_type": 7},
+            {"text": "Financial success and shining", "enneagram_type": 3}
+          ]
+        },
+        {
+          "text": "When someone...",
+          "options": [
+            {"text": "Saves me, I feel secure", "enneagram_type": 4},
+            {"text": "I save someone, I feel exhilarated", "enneagram_type": 2},
+            {"text": "Believes in me and my abilities, I feel alive", "enneagram_type": 3},
+            {"text": "Has no hidden issues, I trust them", "enneagram_type": 6},
+            {"text": "Doesn't raise their voice, I don't interfere with them", "enneagram_type": 8},
+            {"text": "Doesn't disturb my peace, that's enough", "enneagram_type": 9},
+            {"text": "Doesn't imprison me and has fun with me, it's great", "enneagram_type": 7},
+            {"text": "Is punctual, I respect them", "enneagram_type": 1},
+            {"text": "Is knowledgeable, I spend time with them", "enneagram_type": 5}
+          ]
+        },
+        {
+          "text": "Generally...",
+          "options": [
+            {"text": "I take time to warm up to people", "enneagram_type": 4},
+            {"text": "I warm up to people quickly", "enneagram_type": 6}
+          ]
+        },
+        {
+          "text": "For me, what matters most is...",
+          "options": [
+            {"text": "Doing things right and proceeding in an organized manner with attention to detail in work and life", "enneagram_type": 1},
+            {"text": "Getting things done and achieving the final goal", "enneagram_type": 3},
+            {"text": "Bringing peace to people", "enneagram_type": 2},
+            {"text": "Studying", "enneagram_type": 5},
+            {"text": "My comfort", "enneagram_type": 9},
+            {"text": "My freedom", "enneagram_type": 7},
+            {"text": "My standards", "enneagram_type": 8},
+            {"text": "My security", "enneagram_type": 6},
+            {"text": "My emotions and dreams", "enneagram_type": 4}
+          ]
+        },
+        {
+          "text": "When I'm upset...",
+          "options": [
+            {"text": "I don't let anyone know, especially at work", "enneagram_type": 3},
+            {"text": "Everyone can tell from my face and anger", "enneagram_type": 1},
+            {"text": "I become aggressive and raise my voice", "enneagram_type": 8},
+            {"text": "I make a lot of sarcastic remarks", "enneagram_type": 2},
+            {"text": "I isolate myself and cry", "enneagram_type": 4}
+          ]
+        },
+        {
+          "text": "To achieve my goals...",
+          "options": [
+            {"text": "I follow a predetermined path", "enneagram_type": 1},
+            {"text": "I choose a new path", "enneagram_type": 3},
+            {"text": "Taking care of my appearance is very important", "enneagram_type": 4},
+            {"text": "Using kind words and kindness matters", "enneagram_type": 2},
+            {"text": "I try multiple paths and combine them all", "enneagram_type": 7}
+          ]
+        },
+        {
+          "text": "It's important that...",
+          "options": [
+            {"text": "I know how others are doing", "enneagram_type": 2},
+            {"text": "I excel and shine in my field", "enneagram_type": 3},
+            {"text": "I am seen as beautiful", "enneagram_type": 4},
+            {"text": "I travel the world without restrictions", "enneagram_type": 7},
+            {"text": "People adhere to certain principles", "enneagram_type": 1},
+            {"text": "We know", "enneagram_type": 5},
+            {"text": "Others recognize my greatness and power", "enneagram_type": 8},
+            {"text": "I don't have stress or worry", "enneagram_type": 6},
+            {"text": "There is someone to rely on", "enneagram_type": 9}
+          ]
+        },
+        {
+          "text": "It's selfish if...",
+          "options": [
+            {"text": "I pay attention to myself first, then others", "enneagram_type": 2}
+          ]
+        },
+        {
+          "text": "If I'm not appreciated...",
+          "options": [
+            {"text": "I get extremely angry and aggressive", "enneagram_type": 2},
+            {"text": "It doesn't matter; I forget about it", "enneagram_type": 9},
+            {"text": "I stop trusting", "enneagram_type": 6},
+            {"text": "I lose motivation and become passive", "enneagram_type": 3},
+            {"text": "I fight them to teach them a lesson", "enneagram_type": 8},
+            {"text": "I do what aligns with my principles, and it's important that I am satisfied with my performance", "enneagram_type": 1},
+            {"text": "My feelings are hurt, and I become depressed", "enneagram_type": 4},
+            {"text": "I wonder what's the point", "enneagram_type": 5},
+            {"text": "I shrug it off and quickly distract myself", "enneagram_type": 7}
+          ]
+        },
+        {
+          "text": "I tend to...",
+          "options": [
+            {"text": "Not let anyone interfere in my work and maintain my privacy", "enneagram_type": 1},
+            {"text": "Be close and intimate with my friends and develop dependency", "enneagram_type": 2},
+            {"text": "Strive every day to shine", "enneagram_type": 3},
+            {"text": "Do creative and artistic work", "enneagram_type": 4},
+            {"text": "Expand my studies and stay in solitude", "enneagram_type": 5},
+            {"text": "Live without a moment of stress or fear and find a loyal person", "enneagram_type": 6},
+            {"text": "Be very active, have fun, and be free", "enneagram_type": 7},
+            {"text": "Be the boss and come first", "enneagram_type": 8},
+            {"text": "Adapt to everyone and not have anyone interfere in my life", "enneagram_type": 9}
+          ]
+        }
+]

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>نتیجه پرداخت</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+        body {
+            background: radial-gradient(circle at 70% 20%, #FFD70022 0%, #181818 100%);
+            color: #fff;
+            font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .result-container {
+            max-width: 440px;
+            margin: 70px auto 0 auto;
+            background: linear-gradient(135deg, #232323 80%, #FFD70022 100%);
+            border-radius: 1.5rem;
+            box-shadow: 0 0 32px #FFD70033, 0 8px 32px #000a;
+            padding: 3rem 2.2rem 2.2rem 2.2rem;
+            text-align: center;
+            border: 2.5px solid #FFD700;
+            position: relative;
+            overflow: hidden;
+        }
+        .result-container::before {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #FFD70044 60%, transparent 100%);
+            z-index: 0;
+        }
+        .result-icon {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            z-index: 1;
+            position: relative;
+            filter: drop-shadow(0 0 12px #FFD70055);
+        }
+        .success {
+            color: #FFD700;
+            animation: pop 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        .fail {
+            color: #e74c3c;
+            animation: shake 0.5s;
+        }
+        .result-title {
+            font-size: 2.1rem;
+            font-weight: bold;
+            margin-bottom: 1.1rem;
+            letter-spacing: 0.5px;
+            color: #FFD700;
+            z-index: 1;
+            position: relative;
+            text-shadow: 0 2px 8px #000a;
+        }
+        .fail ~ .result-title {
+            color: #e74c3c;
+        }
+        .result-message {
+            font-size: 1.15rem;
+            margin-bottom: 2.2rem;
+            color: #fff;
+            z-index: 1;
+            position: relative;
+            line-height: 2.1;
+        }
+        .btns-row {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            position: relative;
+        }
+        .btn-home, .btn-course {
+            display: inline-block;
+            padding: 0.85rem 2.4rem;
+            background: linear-gradient(90deg, #181818 60%, #FFD700 100%);
+            color: #181818;
+            font-weight: bold;
+            border: none;
+            border-radius: 0.8rem;
+            font-size: 1.13rem;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s, box-shadow 0.2s;
+            box-shadow: 0 0 10px #FFD70044;
+            cursor: pointer;
+            outline: none;
+            margin: 0 0.2rem;
+        }
+        .btn-home:hover, .btn-course:hover {
+            background: #FFD700;
+            color: #181818;
+            box-shadow: 0 0 18px #FFD70099;
+        }
+        .btn-course {
+            background: linear-gradient(90deg, #FFD700 60%, #181818 100%);
+            color: #181818;
+            border: 2px solid #FFD700;
+        }
+        .btn-course:hover {
+            background: #181818;
+            color: #FFD700;
+        }
+        @media (max-width: 600px) {
+            .result-container {
+                max-width: 98vw;
+                padding: 2rem 0.7rem 1.5rem 0.7rem;
+            }
+            .result-title {
+                font-size: 1.3rem;
+            }
+            .result-icon {
+                font-size: 3rem;
+            }
+        }
+        @keyframes pop {
+            0% { transform: scale(0.7);}
+            80% { transform: scale(1.15);}
+            100% { transform: scale(1);}
+        }
+        @keyframes shake {
+            0% { transform: translateX(0);}
+            20% { transform: translateX(-8px);}
+            40% { transform: translateX(8px);}
+            60% { transform: translateX(-6px);}
+            80% { transform: translateX(6px);}
+            100% { transform: translateX(0);}
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+    <div class="result-container">
+        {% if status == "success" %}
+            <div class="result-icon success">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="result-title">پرداخت موفق!</div>
+            <div class="result-message">
+                پرداخت شما با موفقیت انجام شد.<br>
+                دسترسی شما به دوره فعال گردید.
+            </div>
+            <div class="btns-row">
+                <a href="{% url 'course_list' %}" class="btn-home">
+                    <i class="fas fa-home me-2"></i> بازگشت به خانه
+                </a>
+                {% if course %}
+                <a href="{% url 'course_detail' course.id %}" class="btn-course">
+                    <i class="fas fa-chalkboard-teacher me-2"></i> رفتن به صفحه دوره
+                </a>
+                {% endif %}
+            </div>
+        {% elif status == "fail" %}
+            <div class="result-icon fail">
+                <i class="fas fa-times-circle"></i>
+            </div>
+            <div class="result-title">پرداخت ناموفق</div>
+            <div class="result-message">
+                متاسفانه پرداخت شما انجام نشد.<br>
+                لطفا مجددا تلاش کنید یا با پشتیبانی تماس بگیرید.
+            </div>
+            <div class="btns-row">
+                <a href="{% url 'course_list' %}" class="btn-home">
+                    <i class="fas fa-home me-2"></i> بازگشت به خانه
+                </a>
+            </div>
+        {% elif status == "cancel" %}
+            <div class="result-icon fail">
+                <i class="fas fa-ban"></i>
+            </div>
+            <div class="result-title">پرداخت لغو شد</div>
+            <div class="result-message">
+                شما پرداخت را لغو کردید.<br>
+                در صورت نیاز می‌توانید دوباره اقدام کنید.
+            </div>
+            <div class="btns-row">
+                <a href="{% url 'course_list' %}" class="btn-home">
+                    <i class="fas fa-home me-2"></i> بازگشت به خانه
+                </a>
+            </div>
+        {% else %}
+            <div class="result-icon">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <div class="result-title">وضعیت نامشخص</div>
+            <div class="result-message">
+                وضعیت پرداخت مشخص نیست.<br>
+                لطفا با پشتیبانی تماس بگیرید.
+            </div>
+            <div class="btns-row">
+                <a href="{% url 'course_list' %}" class="btn-home">
+                    <i class="fas fa-home me-2"></i> بازگشت به خانه
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

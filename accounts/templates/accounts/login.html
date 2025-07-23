@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}ورود به حساب کاربری{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@latest/font-face.css">
+<style>
+  :root {
+    --primary-color: #FFD700; /* طلایی */
+    --primary-dark: #B8860B;  /* طلایی تیره */
+    --background-dark: #181818; /* مشکی */
+    --card-bg: #232323;
+    --input-bg: #181818;
+    --input-border: #FFD700;
+    --text-color: #FFD700;
+    --text-light: #fff8dc;
+    --error-color: #ff4d4f;
+    --radius: 12px;
+    --shadow: 0 4px 16px 0 rgba(0,0,0,0.4);
+  }
+
+  body {
+    font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--background-dark);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--background-dark);
+  }
+
+  .auth-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 400px;
+    padding: 36px 28px;
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .auth-header {
+    margin-bottom: 28px;
+  }
+
+  .auth-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+  }
+
+  .auth-header p {
+    color: var(--text-light);
+    font-size: 15px;
+  }
+
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .form-group {
+    position: relative;
+    text-align: right;
+    margin-bottom: 0;
+  }
+
+  .input-group {
+    position: relative;
+    width: 100%;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 16px;
+    border: 1.5px solid var(--input-border);
+    border-radius: var(--radius);
+    font-size: 15px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    direction: rtl;
+  }
+
+  .input-group input:focus {
+    outline: none;
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 2px var(--primary-color);
+    background: #222;
+  }
+
+  .input-group label {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--card-bg);
+    color: var(--primary-color);
+    font-size: 14px;
+    padding: 0 4px;
+    pointer-events: none;
+    transition: 0.2s;
+    z-index: 2;
+  }
+
+  .input-group input:focus + label,
+  .input-group input:not(:placeholder-shown) + label {
+    top: -12px;
+    right: 10px;
+    font-size: 12px;
+    background: var(--card-bg);
+    color: var(--primary-dark);
+    padding: 0 6px;
+    border-radius: 8px;
+  }
+
+  .input-error {
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 4px;
+    text-align: right;
+  }
+
+  .auth-alert {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #2d1a1a;
+    color: var(--error-color);
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  .form-options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  .forgot-password {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .forgot-password:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+  }
+
+  .auth-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: #181818;
+    border: none;
+    border-radius: var(--radius);
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    width: 100%;
+  }
+
+  .auth-button:hover {
+    background-color: var(--primary-dark);
+    color: #fff8dc;
+  }
+
+  .auth-footer {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 18px;
+  }
+
+  .auth-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .auth-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1>خوش آمدید</h1>
+      <p>لطفا اطلاعات حساب خود را وارد کنید</p>
+    </div>
+    <form method="POST" class="auth-form" autocomplete="off">
+      {% csrf_token %}
+
+      {% if form.errors %}
+        <div class="auth-alert">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          {% for error in form.non_field_errors %}
+            {{ error }}
+          {% endfor %}
+        </div>
+      {% endif %}
+        
+      <div class="form-group">
+        <div class="input-group">
+          {{ form.phone_number }}
+          <label for="{{ form.phone_number.id_for_label }}">شماره تلفن</label>
+        </div>
+        {% if form.phone_number.errors %}
+          <div class="input-error">{{ form.phone_number.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          {{ form.password }}
+          <label for="{{ form.password.id_for_label }}">رمز عبور</label>
+        </div>
+        {% if form.password.errors %}
+          <div class="input-error">{{ form.password.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="form-options">
+        <a href="#" class="forgot-password">رمز عبور را فراموش کرده‌اید؟</a>
+      </div>
+
+      <button type="submit" class="auth-button">
+        <span>ورود به حساب</span>
+      </button>
+
+      <div class="auth-footer">
+        حساب ندارید؟ <a href="{% url 'register' %}" class="auth-link">ثبت‌نام کنید</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

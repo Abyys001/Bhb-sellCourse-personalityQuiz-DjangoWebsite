@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+{% block title %}Enneagram Test{% endblock %}
+{% load static %}
+{% block extra_head %}
+
+<style>
+    :root {
+      --gold:rgb(255, 255, 255);
+      --gold-dark: #BFA100;
+      --black: #181818;
+      --black-light: #232323;
+      --white: #fff;
+    }
+  
+    .question-box {
+      max-width: 600px;
+      margin: 100px auto;
+      background-color: var(--black);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,215,0,0.10);
+      position: relative;
+      color: var(--gold);
+      border: 2px solid #FFD700;
+    }
+  
+    .question-item {
+      display: none;
+      transition: opacity 0.5s ease-in-out;
+    }
+  
+    .question-item.active {
+      display: block;
+      opacity: 1;
+    }
+  
+    .question-fadeout {
+      opacity: 0;
+    }
+  
+    .question-options label {
+      display: block;
+      padding: 10px;
+      border: 1.5px solid #FFD700;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      color: var(--gold);
+      background-color: var(--black-light);
+      font-weight: 500;
+    }
+  
+    .question-options label:hover,
+    .question-options label:focus-within {
+      background-color: var(--gold);
+      color: var(--black);
+      border-color: var(--gold-dark);
+    }
+  
+    .question-options input[type="radio"] {
+      accent-color: var(--gold);
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+  
+    .question-box p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+  
+    #submitBtn, #backBtn, #startBtn {
+      background: var(--gold);
+      color: var(--black);
+      font-weight: 600;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      border-radius: 3px;
+      font-size: 16px;
+      border: 2px solid transparent;
+      transition: 0.3s ease, background 0.2s, color 0.2s, border-color 0.2s;
+      box-shadow: 0 2px 8px 0 rgba(255,215,0,0.10);
+      margin: 0 5px;
+    }
+  
+    #submitBtn:hover, #backBtn:hover, #startBtn:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .question-item {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    
+    .question-item.active {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+    }
+    body {
+      background-color: var(--black);
+      height: 100vh;
+      margin: 0;
+    }
+    .question-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .start-container {
+      text-align: center;
+      padding: 20px;
+    }
+    .instructions {
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+    @media (max-width: 500px) {
+      .question-nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+  
+{% endblock %}
+
+{% block content %}
+
+<div class="question-box">
+    <form id="enneagramForm" method="post" action="{% url 'submit_test' %}">
+    {% csrf_token %}
+    
+    <!-- Start Test Section -->
+    <div id="startTest" class="start-container">
+      <div class="instructions">
+        <h3>آزمون انیاگرام</h3>
+        <p>این آزمون شامل {{ questions|length }} سوال می‌باشد</p>
+        <p>لطفاً با دقت به سوالات پاسخ دهید</p>
+      </div>
+      <button type="button" id="startBtn" class="btn btn-gold">شروع آزمون</button>
+    </div>
+    
+    <!-- Questions Section (hidden initially) -->
+    <div id="questionsSection" style="display:none;">
+      {% for q in questions %}
+        <div class="question-item {% if forloop.first %}active{% endif %}" data-question-id="{{ q.id }}">
+          <p><strong>{{ q.text }}</strong></p>
+          <div class="question-options">
+            {% for opt in q.options.all %}
+              <label>
+                <input type="radio" name="question_{{ q.id }}" value="{{ opt.enneagram_type }}">
+                {{ opt.text }}
+              </label>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+      <div class="question-nav">
+        <button type="button" id="backBtn" style="display: none;">قبلی</button>
+        <button type="submit" id="submitBtn" style="display: none;">ارسال</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById("enneagramForm");
+  const startBtn = document.getElementById("startBtn");
+  const startTest = document.getElementById("startTest");
+  const questionsSection = document.getElementById("questionsSection");
+  const questions = Array.from(document.querySelectorAll(".question-item"));
+  const backBtn = document.getElementById("backBtn");
+  const submitBtn = document.getElementById("submitBtn");
+  let currentIndex = 0;
+
+  // Start button click handler
+  startBtn.addEventListener("click", function() {
+    startTest.style.display = "none";
+    questionsSection.style.display = "block";
+    showQuestion(currentIndex);
+  });
+
+  // Helper to show/hide navigation buttons
+  function updateNavButtons() {
+    if (currentIndex === 0) {
+      backBtn.style.display = "none";
+    } else {
+      backBtn.style.display = "";
+    }
+    // Show submit only on last question
+    if (currentIndex === questions.length - 1) {
+      submitBtn.style.display = "";
+    } else {
+      submitBtn.style.display = "none";
+    }
+  }
+
+  // Show only the current question
+  function showQuestion(index) {
+    questions.forEach((q, i) => {
+      if (i === index) {
+        q.classList.add("active");
+        q.style.display = "";
+      } else {
+        q.classList.remove("active", "question-fadeout");
+        q.style.display = "none";
+      }
+    });
+    updateNavButtons();
+  }
+
+  // Next question on answer
+  questions.forEach((q, index) => {
+    const inputs = q.querySelectorAll("input[type=radio]");
+    inputs.forEach(input => {
+      input.addEventListener("change", () => {
+        if (currentIndex < questions.length - 1) {
+          questions[currentIndex].classList.remove("active");
+          questions[currentIndex].classList.add("question-fadeout");
+          setTimeout(() => {
+            questions[currentIndex].style.display = "none";
+            currentIndex++;
+            showQuestion(currentIndex);
+          }, 300);
+        }
+      });
+    });
+  });
+
+  // Back button logic
+  backBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      questions[currentIndex].classList.remove("active");
+      questions[currentIndex].classList.add("question-fadeout");
+      setTimeout(() => {
+        questions[currentIndex].style.display = "none";
+        currentIndex--;
+        showQuestion(currentIndex);
+      }, 300);
+    }
+  });
+
+  // Prevent auto submit on last question, show submit button instead
+  form.addEventListener("submit", function(e) {
+    // Allow normal submit
+  });
+</script>
+{% endblock %}
