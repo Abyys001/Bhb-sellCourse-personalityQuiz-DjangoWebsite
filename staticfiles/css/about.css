@@ -1,0 +1,66 @@
+/* تم طلایی-مشکی */
+.gold-title {
+    color: #FFD700;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+  
+  .gold-subtitle {
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .gold-minititle {
+    color: #FFD700;
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
+  
+  .gold-text {
+    color: #e0e0e0;
+    line-height: 1.8;
+  }
+  
+  .gold-text-small {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+  }
+  
+  .gold-card {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .gold-card:hover {
+    border-color: #FFD700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+  
+  .gold-border {
+    border: 2px solid rgba(255, 215, 0, 0.3);
+  }
+  
+  .gold-icon {
+    color: #FFD700;
+    font-size: 2rem;
+  }
+  
+  .gold-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    margin: 1rem auto;
+    width: 50%;
+  }
+  
+  .gold-divider-small {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    margin: 0.5rem auto;
+    width: 30%;
+  }

@@ -1,0 +1,23 @@
+/* استایل‌های پایه برای همه تیپ‌ها */
+.enneagram-container {
+    font-family: 'Vazir', sans-serif;
+    line-height: 1.8;
+}
+
+.type-section h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* استایل‌های واکنش‌گرا */
+@media (max-width: 768px) {
+    .enneagram-container {
+        padding: 20px 15px;
+    }
+    
+    .type-image {
+        max-height: 200px;
+    }
+}
