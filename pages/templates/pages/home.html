@@ -1,15 +1,28 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load i18n %}
 
-{% block title %}خانه | Bhbrand{% endblock %}
+{% block title %}{% trans "خانه" %} | Bhbrand{% endblock %}
 
 {% block content %}
+
+{% comment %} <div class="language-switcher text-end p-3">
+  <form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ request.path }}">
+    <select name="language" onchange="this.form.submit()" class="form-select d-inline w-auto">
+      <option value="fa" {% if LANGUAGE_CODE == 'fa' %}selected{% endif %}>{% trans "فارسی" %}</option>
+      <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>{% trans "English" %}</option>
+    </select>
+  </form>
+</div> {% endcomment %}
+
 <section class="hero-section d-flex align-items-center justify-content-center text-center" style="min-height: 80vh; background-image: url('{% static 'images/hero-bg.jpg' %}'); background-size: cover; background-position: center; color: #fff; position: relative;">
   <div class="container py-5" style="background-color: rgba(0, 0, 0, 0.6); border-radius: 16px;">
-    <h1 class="display-5 fw-bold text-gold mb-4">به Bhbrand خوش آمدید</h1>
-    <p class="lead mb-4">با ما آینده‌ای روشن و حرفه‌ای بسازید.</p>
-    <a href="{% url 'enneagram_test' %}" class="btn btn-gold btn-lg px-4">آزمون انیاگرام</a>
+    <h1 class="display-5 fw-bold text-gold mb-4">{% trans "به Bhbrand خوش آمدید" %}</h1>
+    <p class="lead mb-4">{% trans "با ما آینده‌ای روشن و حرفه‌ای بسازید." %}</p>
+    <a href="{% url 'enneagram_test' %}" class="btn btn-gold btn-lg px-4">{% trans "آزمون انیاگرام" %}</a>
   </div>
 </section>
 
@@ -19,22 +32,22 @@
       <div class="col-md-4 mb-4">
         <div class="p-4 border rounded-3 bg-black h-100 shadow-sm">
           <i class="fas fa-lightbulb fa-2x text-gold mb-3"></i>
-          <h5 class="fw-bold mb-2">نوآوری</h5>
-          <p class="small">راه‌حل‌های خلاقانه برای رشد شما</p>
+          <h5 class="fw-bold mb-2">{% trans "نوآوری" %}</h5>
+          <p class="small">{% trans "راه‌حل‌های خلاقانه برای رشد شما" %}</p>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="p-4 border rounded-3 bg-black h-100 shadow-sm">
           <i class="fas fa-users fa-2x text-gold mb-3"></i>
-          <h5 class="fw-bold mb-2">تیم حرفه‌ای</h5>
-          <p class="small">همراه با تخصص و تعهد بالا</p>
+          <h5 class="fw-bold mb-2">{% trans "تیم حرفه‌ای" %}</h5>
+          <p class="small">{% trans "همراه با تخصص و تعهد بالا" %}</p>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="p-4 border rounded-3 bg-black h-100 shadow-sm">
           <i class="fas fa-headset fa-2x text-gold mb-3"></i>
-          <h5 class="fw-bold mb-2">پشتیبانی ۲۴/۷</h5>
-          <p class="small">همیشه در کنار شما</p>
+          <h5 class="fw-bold mb-2">{% trans "پشتیبانی ۲۴/۷" %}</h5>
+          <p class="small">{% trans "همیشه در کنار شما" %}</p>
         </div>
       </div>
     </div>

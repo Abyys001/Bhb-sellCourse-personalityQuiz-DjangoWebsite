@@ -1,4 +1,4 @@
-<!-- templates/includes/footer.html -->
+{% load i18n %}
 <footer class="footer bg-gradient-primary text-white py-4 mt-5 shadow-lg" style="background: linear-gradient(90deg, #232526 0%, #414345 100%);">
     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
         <div class="d-flex align-items-center">
@@ -14,14 +14,14 @@
             </div>
         </div>
         <div class="footer-links mb-2 mb-md-0">
-            <a href="{% url 'home' %}" class="text-white mx-2 text-decoration-none footer-link">خانه</a>
-            <a href="{% url 'about' %}" class="text-white mx-2 text-decoration-none footer-link">درباره ما</a>
+            <a href="{% url 'home' %}" class="text-white mx-2 text-decoration-none footer-link">{% trans "خانه" %}</a>
+            <a href="{% url 'about' %}" class="text-white mx-2 text-decoration-none footer-link">{% trans "درباره ما" %}</a>
         </div>
         <div class="footer-copy d-flex align-items-center">
             <p class="mb-0 small">
-                © تمامی حقوق محفوظ است {{ now|date:"Y" }}
+                © {% trans "تمامی حقوق محفوظ است" %} {{ now|date:"Y" }}
                 <span class="mx-1">|</span>
-                ساخته شده با <i class="fas fa-heart text-danger"></i>
+                {% blocktrans %}ساخته شده با{% endblocktrans %} <i class="fas fa-heart text-danger"></i>
             </p>
         </div>
     </div>

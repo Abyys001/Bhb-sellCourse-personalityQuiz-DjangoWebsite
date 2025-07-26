@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block content %}
+<section class="about-section" style="background-color: #0a0a0a; color: #e0e0e0;">
+  <div class="container py-5">
+    <!-- هدر صفحه -->
+    <div class="text-center mb-5">
+      <h1 class="gold-title mb-4">
+        <i class="fas fa-crown me-2"></i>
+        {% trans "درباره ما" %}
+      </h1>
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- معرفی کژوال -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8">
+        <div class="gold-card p-4 h-100 text-center">
+          <h2 class="gold-subtitle mb-4">
+            <i class="fas fa-gem me-2"></i>
+            {% trans "داستان ساده ما" %}
+          </h2>
+          <p class="gold-text" style="font-size:1.15rem;">
+            {% blocktrans %}
+            ما یه تیم کوچیک و پرانرژی هستیم که عاشق یادگیری و یاد دادنیم!  
+            این سایت رو ساختیم تا بتونیم تجربه‌هامون رو با بقیه به اشتراک بذاریم و یه فضای دوستانه برای رشد و آموزش ایجاد کنیم.
+            <br><br>
+            اینجا خبری از شعارهای عجیب و غریب نیست؛ فقط دوست داریم کنار هم، ساده و صمیمی، چیزای جدید یاد بگیریم و حال خوب بسازیم.
+            <br>
+            اگر سوالی داشتی یا دوست داشتی بیشتر باهامون آشنا بشی، خوشحال می‌شیم بهمون پیام بدی :)
+            {% endblocktrans %}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ارزش‌های ساده ما -->
+    <div class="row mb-5">
+      <div class="col-12 text-center mb-4">
+        <h2 class="gold-subtitle">
+          <i class="fas fa-star me-2"></i>
+          {% trans "ارزش‌های ما" %}
+        </h2>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="gold-card p-4 h-100 text-center">
+          <i class="fas fa-lightbulb gold-icon mb-3"></i>
+          <h3 class="gold-minititle">{% trans "یادگیری باحال" %}</h3>
+          <p class="gold-text">
+            {% trans "همیشه دنبال یاد گرفتن چیزای جدید و باحالیم و دوست داریم این حس رو منتقل کنیم." %}
+          </p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="gold-card p-4 h-100 text-center">
+          <i class="fas fa-hand-holding-heart gold-icon mb-3"></i>
+          <h3 class="gold-minititle">{% trans "رفاقت و صمیمیت" %}</h3>
+          <p class="gold-text">
+            {% trans "اینجا همه مثل یه جمع دوستانه کنار همیم و هوای همو داریم." %}
+          </p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="gold-card p-4 h-100 text-center">
+          <i class="fas fa-award gold-icon mb-3"></i>
+          <h3 class="gold-minititle">{% trans "ساده و قابل فهم" %}</h3>
+          <p class="gold-text">
+            {% trans "سعی می‌کنیم همه چیز رو ساده و قابل فهم توضیح بدیم تا همه بتونن استفاده کنن." %}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ارتباط با ما -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="gold-card p-4 h-100 text-center">
+          <h2 class="gold-subtitle mb-3">
+            <i class="fas fa-envelope me-2"></i>
+            {% trans "ارتباط با ما" %}
+          </h2>
+          <p class="gold-text">
+            {% blocktrans trimmed %}
+            اگر دوست داشتی با ما در ارتباط باشی یا پیشنهادی داشتی، می‌تونی به 
+            <a href="mailto:support@example.com" style="color:#FFD700;">support@example.com</a>
+            ایمیل بزنی یا از طریق فرم تماس سایت پیام بدی.
+            <br>
+            همیشه منتظر شنیدن صدای شما هستیم!
+            {% endblocktrans %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,3 +1,4 @@
+{% load i18n %}
 <!-- templates/includes/navbar.html -->
 <style>
   .navbar-gold {
@@ -88,6 +89,83 @@
     background: #FFD700;
     color: #222 !important;
   }
+
+  /* Language Switcher Button */
+  .navbar-lang-btn {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 0.35rem 1.1rem 0.35rem 1.1rem;
+    background: linear-gradient(90deg, #FFD700 60%, #e0b800 100%);
+    color: #222 !important;
+    border: none;
+    box-shadow: 0 2px 8px rgba(255,215,0,0.13);
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    position: relative;
+    z-index: 2;
+  }
+  .navbar-lang-btn:hover, .navbar-lang-btn:focus {
+    background: linear-gradient(90deg, #e0b800 60%, #FFD700 100%);
+    color: #fff !important;
+    box-shadow: 0 4px 16px 0 rgba(255,215,0,0.22);
+    text-decoration: none;
+  }
+  .navbar-lang-btn .lang-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.2em;
+    height: 1.2em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+  }
+  .navbar-lang-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    min-width: 120px;
+    background: #232323;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.18);
+    padding: 0.3em 0;
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .navbar-lang-dropdown.show {
+    display: flex;
+  }
+  .navbar-lang-dropdown button {
+    background: none;
+    border: none;
+    color: #FFD700;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5em 1.2em;
+    text-align: left;
+    transition: background 0.18s, color 0.18s;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .navbar-lang-dropdown button:hover, .navbar-lang-dropdown button:focus {
+    background: #FFD70022;
+    color: #fff8dc;
+  }
+  @media (max-width: 991.98px) {
+    .navbar-lang-btn {
+      margin-top: 0.7rem;
+      margin-bottom: 0.7rem;
+    }
+    .navbar-lang-dropdown {
+      left: auto;
+      right: 0;
+    }
+  }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-gold">
@@ -100,24 +178,91 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item">
-          <a class="nav-link{% if request.resolver_match.url_name == 'home' %} active{% endif %}" href="{% url 'home' %}">خانه</a>
+          <a class="nav-link{% if request.resolver_match.url_name == 'home' %} active{% endif %}" href="{% url 'home' %}">{% trans "خانه" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link{% if request.resolver_match.url_name == 'enneagram_test' %} active{% endif %}" href="{% url 'enneagram_test' %}">آزمون انیاگرام</a>
+          <a class="nav-link{% if request.resolver_match.url_name == 'enneagram_test' %} active{% endif %}" href="{% url 'enneagram_test' %}">{% trans "آزمون انیاگرام" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'course_list' %}">دوره ها</a>
+          <a class="nav-link{% if request.resolver_match.url_name == 'course_list' %} active{% endif %}" href="{% url 'course_list' %}">{% trans "دوره‌ها" %}</a>
+        </li>        
+        <li class="nav-item">
+          <a class="nav-link{% if request.resolver_match.url_name == 'about' %} active{% endif %}" href="{% url 'about' %}">{% trans "درباره ما" %}</a>
         </li>
       </ul>
+      <!-- Language Switcher Button -->
+      <div class="position-relative d-inline-block" id="navbar-lang-switcher" style="margin-left: 0.5rem;">
+        <form action="/i18n/setlang/" method="post" id="lang-switcher-form" style="display:inline;">
+          {% csrf_token %}
+          <input name="next" type="hidden" value="{{ request.get_full_path }}">
+          <button type="button" class="navbar-lang-btn" id="langSwitcherBtn" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-icon">
+              <!-- Globe SVG Icon -->
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="#222" stroke-width="1.5" fill="#FFD700"/>
+                <path d="M10 1v18M1 10h18M3.5 3.5c2.5 2.5 10.5 2.5 13 0M3.5 16.5c2.5-2.5 10.5-2.5 13 0" stroke="#222" stroke-width="1"/>
+              </svg>
+            </span>
+            {% get_current_language as LANGUAGE_CODE %}
+            <span id="current-lang-label">
+              {% if LANGUAGE_CODE == "fa" %}
+                English
+              {% elif LANGUAGE_CODE == "en" %}
+                فارسی
+              {% else %}
+                فارسی
+              {% endif %}
+            </span>
+          </button>
+          <div class="navbar-lang-dropdown" id="langDropdown" role="menu" aria-labelledby="langSwitcherBtn">
+            <button type="submit" name="language" value="fa"{% if LANGUAGE_CODE == "fa" or not LANGUAGE_CODE %} style="font-weight:700;"{% endif %}>فارسی</button>
+            <button type="submit" name="language" value="en"{% if LANGUAGE_CODE == "en" %} style="font-weight:700;"{% endif %}>English</button>
+          </div>
+        </form>
+      </div>
+      <script>
+        // Language dropdown toggle
+        (function(){
+          var btn = document.getElementById('langSwitcherBtn');
+          var dropdown = document.getElementById('langDropdown');
+          var form = document.getElementById('lang-switcher-form');
+          var closeDropdown = function(e) {
+            if (!dropdown.contains(e.target) && !btn.contains(e.target)) {
+              dropdown.classList.remove('show');
+              btn.setAttribute('aria-expanded', 'false');
+              document.removeEventListener('mousedown', closeDropdown);
+            }
+          };
+          btn && btn.addEventListener('click', function(e){
+            e.preventDefault();
+            dropdown.classList.toggle('show');
+            btn.setAttribute('aria-expanded', dropdown.classList.contains('show') ? 'true' : 'false');
+            if (dropdown.classList.contains('show')) {
+              setTimeout(function(){
+                document.addEventListener('mousedown', closeDropdown);
+              }, 10);
+            }
+          });
+          // Submit form on dropdown button click
+          if (dropdown) {
+            dropdown.querySelectorAll('button[type="submit"]').forEach(function(langBtn){
+              langBtn.addEventListener('click', function(){
+                dropdown.classList.remove('show');
+                btn.setAttribute('aria-expanded', 'false');
+              });
+            });
+          }
+        })();
+      </script>
       {% if user.is_authenticated %}
         <br>
-        <a href="{% url 'dashboard' %}" class="navbar-account-btn ms-lg-3">حساب کاربری من</a>
+        <a href="{% url 'dashboard' %}" class="navbar-account-btn ms-lg-3">{% trans "حساب کاربری من" %}</a>
         <form method="post" action="{% url 'logout' %}" style="display:inline;">
           {% csrf_token %}
-          <button type="submit" class="navbar-logout-btn">خروج</button>
+          <button type="submit" class="navbar-logout-btn">{% trans "خروج" %}</button>
         </form>
       {% else %}
-        <a href="{% url 'login' %}" class="navbar-account-btn ms-lg-3">ورود</a>
+        <a href="{% url 'login' %}" class="navbar-account-btn ms-lg-3">{% trans "ورود" %}</a>
       {% endif %}
     </div>
   </div>

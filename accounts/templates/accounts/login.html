@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}ورود به حساب کاربری{% endblock %}
+{% load i18n %}
+
+{% block title %}{% trans "ورود به حساب کاربری" %}{% endblock %}
 
 {% block extra_head %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@latest/font-face.css">
@@ -76,6 +78,10 @@
     margin-bottom: 0;
   }
 
+  [dir="ltr"] .form-group {
+    text-align: left;
+  }
+
   .input-group {
     position: relative;
     width: 100%;
@@ -91,6 +97,11 @@
     color: var(--text-color);
     transition: border-color 0.3s, box-shadow 0.3s;
     direction: rtl;
+  }
+
+  [dir="ltr"] .input-group input {
+    direction: ltr;
+    text-align: left;
   }
 
   .input-group input:focus {
@@ -114,6 +125,12 @@
     z-index: 2;
   }
 
+  [dir="ltr"] .input-group label {
+    right: auto;
+    left: 18px;
+    text-align: left;
+  }
+
   .input-group input:focus + label,
   .input-group input:not(:placeholder-shown) + label {
     top: -12px;
@@ -125,11 +142,21 @@
     border-radius: 8px;
   }
 
+  [dir="ltr"] .input-group input:focus + label,
+  [dir="ltr"] .input-group input:not(:placeholder-shown) + label {
+    right: auto;
+    left: 10px;
+  }
+
   .input-error {
     color: var(--error-color);
     font-size: 12px;
     margin-top: 4px;
     text-align: right;
+  }
+
+  [dir="ltr"] .input-error {
+    text-align: left;
   }
 
   .auth-alert {
@@ -145,12 +172,20 @@
     margin-bottom: 10px;
   }
 
+  [dir="ltr"] .auth-alert {
+    text-align: left;
+  }
+
   .form-options {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     font-size: 13px;
     margin-bottom: 0;
+  }
+
+  [dir="ltr"] .form-options {
+    justify-content: flex-start;
   }
 
   .forgot-password {
@@ -210,8 +245,8 @@
 <div class="auth-container">
   <div class="auth-card">
     <div class="auth-header">
-      <h1>خوش آمدید</h1>
-      <p>لطفا اطلاعات حساب خود را وارد کنید</p>
+      <h1>{% trans "خوش آمدید" %}</h1>
+      <p>{% trans "لطفا اطلاعات حساب خود را وارد کنید" %}</p>
     </div>
     <form method="POST" class="auth-form" autocomplete="off">
       {% csrf_token %}
@@ -232,7 +267,7 @@
       <div class="form-group">
         <div class="input-group">
           {{ form.phone_number }}
-          <label for="{{ form.phone_number.id_for_label }}">شماره تلفن</label>
+          <label for="{{ form.phone_number.id_for_label }}">{% trans "شماره تلفن" %}</label>
         </div>
         {% if form.phone_number.errors %}
           <div class="input-error">{{ form.phone_number.errors }}</div>
@@ -242,7 +277,7 @@
       <div class="form-group">
         <div class="input-group">
           {{ form.password }}
-          <label for="{{ form.password.id_for_label }}">رمز عبور</label>
+          <label for="{{ form.password.id_for_label }}">{% trans "رمز عبور" %}</label>
         </div>
         {% if form.password.errors %}
           <div class="input-error">{{ form.password.errors }}</div>
@@ -250,15 +285,15 @@
       </div>
 
       <div class="form-options">
-        <a href="#" class="forgot-password">رمز عبور را فراموش کرده‌اید؟</a>
+        <a href="#" class="forgot-password">{% trans "رمز عبور را فراموش کرده‌اید؟" %}</a>
       </div>
 
       <button type="submit" class="auth-button">
-        <span>ورود به حساب</span>
+        <span>{% trans "ورود به حساب" %}</span>
       </button>
 
       <div class="auth-footer">
-        حساب ندارید؟ <a href="{% url 'register' %}" class="auth-link">ثبت‌نام کنید</a>
+        {% trans "حساب ندارید؟" %} <a href="{% url 'register' %}" class="auth-link">{% trans "ثبت‌نام کنید" %}</a>
       </div>
     </form>
   </div>

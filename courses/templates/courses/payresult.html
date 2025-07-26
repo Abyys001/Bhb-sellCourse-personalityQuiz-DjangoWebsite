@@ -1,8 +1,9 @@
+{% load i18n %}
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE|default:'fa' }}">
 <head>
     <meta charset="UTF-8">
-    <title>نتیجه پرداخت</title>
+    <title>{% trans "نتیجه پرداخت" %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
@@ -13,6 +14,7 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            direction: {% get_current_language as LANGUAGE_CODE %}{% if LANGUAGE_CODE == 'en' %}ltr{% else %}rtl{% endif %};
         }
         .result-container {
             max-width: 440px;
@@ -145,18 +147,31 @@
             <div class="result-icon success">
                 <i class="fas fa-check-circle"></i>
             </div>
-            <div class="result-title">پرداخت موفق!</div>
+            <div class="result-title">
+                {% blocktrans %}
+                    پرداخت موفق!
+                {% plural %}
+                    Payment Successful!
+                {% endblocktrans %}
+            </div>
             <div class="result-message">
-                پرداخت شما با موفقیت انجام شد.<br>
-                دسترسی شما به دوره فعال گردید.
+                {% blocktrans %}
+                    پرداخت شما با موفقیت انجام شد.<br>
+                    دسترسی شما به دوره فعال گردید.
+                {% plural %}
+                    Your payment was successful.<br>
+                    Your access to the course has been activated.
+                {% endblocktrans %}
             </div>
             <div class="btns-row">
                 <a href="{% url 'course_list' %}" class="btn-home">
-                    <i class="fas fa-home me-2"></i> بازگشت به خانه
+                    <i class="fas fa-home me-2"></i>
+                    {% blocktrans %}بازگشت به خانه{% plural %}Back to Home{% endblocktrans %}
                 </a>
                 {% if course %}
                 <a href="{% url 'course_detail' course.id %}" class="btn-course">
-                    <i class="fas fa-chalkboard-teacher me-2"></i> رفتن به صفحه دوره
+                    <i class="fas fa-chalkboard-teacher me-2"></i>
+                    {% blocktrans %}رفتن به صفحه دوره{% plural %}Go to Course Page{% endblocktrans %}
                 </a>
                 {% endif %}
             </div>
@@ -164,42 +179,78 @@
             <div class="result-icon fail">
                 <i class="fas fa-times-circle"></i>
             </div>
-            <div class="result-title">پرداخت ناموفق</div>
+            <div class="result-title">
+                {% blocktrans %}
+                    پرداخت ناموفق
+                {% plural %}
+                    Payment Failed
+                {% endblocktrans %}
+            </div>
             <div class="result-message">
-                متاسفانه پرداخت شما انجام نشد.<br>
-                لطفا مجددا تلاش کنید یا با پشتیبانی تماس بگیرید.
+                {% blocktrans %}
+                    متاسفانه پرداخت شما انجام نشد.<br>
+                    لطفا مجددا تلاش کنید یا با پشتیبانی تماس بگیرید.
+                {% plural %}
+                    Unfortunately, your payment was not successful.<br>
+                    Please try again or contact support.
+                {% endblocktrans %}
             </div>
             <div class="btns-row">
                 <a href="{% url 'course_list' %}" class="btn-home">
-                    <i class="fas fa-home me-2"></i> بازگشت به خانه
+                    <i class="fas fa-home me-2"></i>
+                    {% blocktrans %}بازگشت به خانه{% plural %}Back to Home{% endblocktrans %}
                 </a>
             </div>
         {% elif status == "cancel" %}
             <div class="result-icon fail">
                 <i class="fas fa-ban"></i>
             </div>
-            <div class="result-title">پرداخت لغو شد</div>
+            <div class="result-title">
+                {% blocktrans %}
+                    پرداخت لغو شد
+                {% plural %}
+                    Payment Cancelled
+                {% endblocktrans %}
+            </div>
             <div class="result-message">
-                شما پرداخت را لغو کردید.<br>
-                در صورت نیاز می‌توانید دوباره اقدام کنید.
+                {% blocktrans %}
+                    شما پرداخت را لغو کردید.<br>
+                    در صورت نیاز می‌توانید دوباره اقدام کنید.
+                {% plural %}
+                    You cancelled the payment.<br>
+                    You can try again if needed.
+                {% endblocktrans %}
             </div>
             <div class="btns-row">
                 <a href="{% url 'course_list' %}" class="btn-home">
-                    <i class="fas fa-home me-2"></i> بازگشت به خانه
+                    <i class="fas fa-home me-2"></i>
+                    {% blocktrans %}بازگشت به خانه{% plural %}Back to Home{% endblocktrans %}
                 </a>
             </div>
         {% else %}
             <div class="result-icon">
                 <i class="fas fa-info-circle"></i>
             </div>
-            <div class="result-title">وضعیت نامشخص</div>
+            <div class="result-title">
+                {% blocktrans %}
+                    وضعیت نامشخص
+                {% plural %}
+                    Unknown Status
+                {% endblocktrans %}
+            </div>
             <div class="result-message">
-                وضعیت پرداخت مشخص نیست.<br>
-                لطفا با پشتیبانی تماس بگیرید.
+                {% blocktrans %}
+                    وضعیت پرداخت مشخص نیست.<br>
+                    لطفا با پشتیبانی تماس بگیرید.
+                {% plural %}
+                    Payment status is unknown.<br>
+                    Please contact support.
+                {% endblocktrans %}
             </div>
             <div class="btns-row">
                 <a href="{% url 'course_list' %}" class="btn-home">
-                    <i class="fas fa-home me-2"></i> بازگشت به خانه
+                    <i class="fas fa-home me-2"></i>
+                    {% blocktrans %}بازگشت به خانه{% plural %}Back to Home{% endblocktrans %}
                 </a>
             </div>
         {% endif %}

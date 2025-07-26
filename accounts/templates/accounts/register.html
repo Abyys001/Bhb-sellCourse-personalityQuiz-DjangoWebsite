@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}فرم ثبت‌نام{% endblock %}
+{% block title %}{% trans "فرم ثبت‌نام" %}{% endblock %}
 
 {% block extra_head %}
   <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
@@ -17,14 +18,27 @@
       direction: rtl;
       text-align: right;
     }
+    [dir="ltr"] .login, [dir="ltr"] .wrapper, [dir="ltr"] form, [dir="ltr"] .input-field, [dir="ltr"] .register {
+      direction: ltr;
+      text-align: left;
+    }
     .input-field label, .input-field input {
       float: right;
+    }
+    [dir="ltr"] .input-field label, [dir="ltr"] .input-field input {
+      float: left;
     }
     .register p, .register a {
       text-align: right;
     }
+    [dir="ltr"] .register p, [dir="ltr"] .register a {
+      text-align: left;
+    }
     button[type="submit"] {
       float: right;
+    }
+    [dir="ltr"] button[type="submit"] {
+      float: left;
     }
   </style>
 {% endblock %}
@@ -34,26 +48,28 @@
     <div class="wrapper">
       <form method="POST" action="{% url 'register' %}">
         {% csrf_token %}
-        <h2 style="text-align:right;">ثبت‌نام</h2>
+        <h2 style="text-align:right;" class="text-title">{% trans "ثبت‌نام" %}</h2>
         <div class="input-field">
-          <input type="text" name="phone_number" required style="text-align:right;">
-          <label style="right:0;">شماره تلفن</label>
+          <input type="text" name="phone_number" required style="text-align:right;" placeholder="{% trans 'شماره تلفن' %}">
+          <label style="right:0;">{% trans "شماره تلفن" %}</label>
         </div>
         <div class="input-field">
-          <input type="text" name="name" required style="text-align:right;">
-          <label style="right:0;">نام</label>
+          <input type="text" name="name" required style="text-align:right;" placeholder="{% trans 'نام' %}">
+          <label style="right:0;">{% trans "نام" %}</label>
         </div>
         <div class="input-field">
-          <input type="password" name="password1" required style="text-align:right;">
-          <label style="right:0;">رمز عبور</label>
+          <input type="password" name="password1" required style="text-align:right;" placeholder="{% trans 'رمز عبور' %}">
+          <label style="right:0;">{% trans "رمز عبور" %}</label>
         </div>
         <div class="input-field">
-          <input type="password" name="password2" required style="text-align:right;">
-          <label style="right:0;">تکرار رمز عبور</label>
+          <input type="password" name="password2" required style="text-align:right;" placeholder="{% trans 'تکرار رمز عبور' %}">
+          <label style="right:0;">{% trans "تکرار رمز عبور" %}</label>
         </div>
-        <button type="submit" style="float:right;">ثبت‌نام</button>
+        <button type="submit" style="float:right;">{% trans "ثبت‌نام" %}</button>
         <div class="register">
-          <p>حساب دارید؟ <a href="{% url 'login' %}">ورود</a></p>
+          <p>
+            {% trans "حساب دارید؟" %} <a href="{% url 'login' %}">{% trans "ورود" %}</a>
+          </p>
         </div>
       </form>
     </div>

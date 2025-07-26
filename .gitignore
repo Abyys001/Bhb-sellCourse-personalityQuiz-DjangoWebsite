@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+Bhbrand/settings.py
 
 # C extensions
 *.so

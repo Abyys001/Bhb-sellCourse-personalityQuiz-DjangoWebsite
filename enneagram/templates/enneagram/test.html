@@ -1,6 +1,13 @@
 {% extends "base.html" %}
-{% block title %}Enneagram Test{% endblock %}
+{% load i18n %}
 {% load static %}
+{% block title %}
+  {% if lang == "en" %}
+    {% trans "Enneagram Test" %}
+  {% else %}
+    {% trans "آزمون انیاگرام" %}
+  {% endif %}
+{% endblock %}
 {% block extra_head %}
 
 <style>
@@ -71,7 +78,7 @@
     }
     
   
-    #submitBtn, #backBtn, #startBtn {
+    #submitBtn, #backBtn, #startBtn, #nextBtn {
       background: var(--gold);
       color: var(--black);
       font-weight: 600;
@@ -86,10 +93,15 @@
       margin: 0 5px;
     }
   
-    #submitBtn:hover, #backBtn:hover, #startBtn:hover {
+    #submitBtn:hover, #backBtn:hover, #startBtn:hover, #nextBtn:hover {
       color: var(--gold);
       border-color: var(--gold);
       background: rgba(255, 255, 255, 0.15);
+    }
+    
+    #nextBtn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
     .question-item {
       opacity: 0;
@@ -124,6 +136,30 @@
       margin-bottom: 20px;
       color: var(--gold);
     }
+    .lang-switch {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .lang-switch form {
+      display: inline-block;
+    }
+    .lang-switch button {
+      background: var(--black-light);
+      color: var(--gold);
+      border: 1px solid var(--gold-dark);
+      border-radius: 5px;
+      padding: 6px 16px;
+      margin: 0 4px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-switch button.active,
+    .lang-switch button:focus {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold-dark);
+    }
     @media (max-width: 500px) {
       .question-nav {
         flex-direction: column;
@@ -136,38 +172,108 @@
 
 {% block content %}
 
-<div class="question-box">
-    <form id="enneagramForm" method="post" action="{% url 'submit_test' %}">
+<div class="question-box" dir="{% if lang == 'en' %}ltr{% else %}rtl{% endif %}">
+  <div class="lang-switch">
+    <form method="get" action="">
+      <button type="submit" name="lang" value="fa" {% if lang == "fa" %}class="active"{% endif %}>
+        فارسی
+      </button>
+      <button type="submit" name="lang" value="en" {% if lang == "en" %}class="active"{% endif %}>
+        English
+      </button>
+    </form>
+  </div>
+  <form id="enneagramForm" method="post" action="{% url 'submit_test' %}">
     {% csrf_token %}
+    <input type="hidden" name="lang" value="{{ lang }}">
     
     <!-- Start Test Section -->
     <div id="startTest" class="start-container">
       <div class="instructions">
-        <h3>آزمون انیاگرام</h3>
-        <p>این آزمون شامل {{ questions|length }} سوال می‌باشد</p>
-        <p>لطفاً با دقت به سوالات پاسخ دهید</p>
+        <h3>
+          {% if lang == "en" %}
+            {% trans "Enneagram Test" %}
+          {% else %}
+            {% trans "آزمون انیاگرام" %}
+          {% endif %}
+        </h3>
+        <p>
+          {% if lang == "en" %}
+            {% blocktrans count questions_count=questions|length %}
+              This test contains {{ questions_count }} questions.
+            {% plural %}
+              This test contains {{ questions_count }} questions.
+            {% endblocktrans %}
+          {% else %}
+            {% blocktrans count questions_count=questions|length %}
+              این آزمون شامل {{ questions_count }} سوال می‌باشد
+            {% plural %}
+              این آزمون شامل {{ questions_count }} سوال می‌باشد
+            {% endblocktrans %}
+          {% endif %}
+        </p>
+        <p>
+          {% if lang == "en" %}
+            {% trans "Please answer the questions carefully." %}
+          {% else %}
+            {% trans "لطفاً با دقت به سوالات پاسخ دهید" %}
+          {% endif %}
+        </p>
       </div>
-      <button type="button" id="startBtn" class="btn btn-gold">شروع آزمون</button>
+      <button type="button" id="startBtn" class="btn btn-gold">
+        {% if lang == "en" %}
+          {% trans "Start Test" %}
+        {% else %}
+          {% trans "شروع آزمون" %}
+        {% endif %}
+      </button>
     </div>
     
     <!-- Questions Section (hidden initially) -->
     <div id="questionsSection" style="display:none;">
       {% for q in questions %}
-        <div class="question-item {% if forloop.first %}active{% endif %}" data-question-id="{{ q.id }}">
+        <div class="question-item" data-question-id="{{ q.id }}">
           <p><strong>{{ q.text }}</strong></p>
           <div class="question-options">
             {% for opt in q.options.all %}
               <label>
-                <input type="radio" name="question_{{ q.id }}" value="{{ opt.enneagram_type }}">
+                <input type="radio" name="question_{{ q.id }}" value="{{ opt.id }}" required>
                 {{ opt.text }}
               </label>
+            {% empty %}
+              <p style="color: red;">
+                {% if lang == "en" %}
+                  No options available for this question
+                {% else %}
+                  هیچ گزینه‌ای برای این سوال موجود نیست
+                {% endif %}
+              </p>
             {% endfor %}
           </div>
         </div>
       {% endfor %}
       <div class="question-nav">
-        <button type="button" id="backBtn" style="display: none;">قبلی</button>
-        <button type="submit" id="submitBtn" style="display: none;">ارسال</button>
+        <button type="button" id="nextBtn" style="display: none;">
+          {% if lang == "en" %}
+            {% trans "Next" %}
+          {% else %}
+            {% trans "بعدی" %}
+          {% endif %}
+        </button>
+        <button type="button" id="backBtn" style="display: none;">
+          {% if lang == "en" %}
+            {% trans "Back" %}
+          {% else %}
+            {% trans "قبلی" %}
+          {% endif %}
+        </button>
+        <button type="submit" id="submitBtn" style="display: none;">
+          {% if lang == "en" %}
+            {% trans "Submit" %}
+          {% else %}
+            {% trans "ارسال" %}
+          {% endif %}
+        </button>
       </div>
     </div>
   </form>
@@ -180,6 +286,7 @@
   const questionsSection = document.getElementById("questionsSection");
   const questions = Array.from(document.querySelectorAll(".question-item"));
   const backBtn = document.getElementById("backBtn");
+  const nextBtn = document.getElementById("nextBtn");
   const submitBtn = document.getElementById("submitBtn");
   let currentIndex = 0;
 
@@ -197,10 +304,12 @@
     } else {
       backBtn.style.display = "";
     }
-    // Show submit only on last question
+    
     if (currentIndex === questions.length - 1) {
+      nextBtn.style.display = "none";
       submitBtn.style.display = "";
     } else {
+      nextBtn.style.display = "";
       submitBtn.style.display = "none";
     }
   }
@@ -217,6 +326,11 @@
       }
     });
     updateNavButtons();
+    
+    // Disable next button initially
+    if (currentIndex < questions.length - 1) {
+      nextBtn.disabled = true;
+    }
   }
 
   // Next question on answer
@@ -224,17 +338,26 @@
     const inputs = q.querySelectorAll("input[type=radio]");
     inputs.forEach(input => {
       input.addEventListener("change", () => {
+        // Enable next button when an option is selected
         if (currentIndex < questions.length - 1) {
-          questions[currentIndex].classList.remove("active");
-          questions[currentIndex].classList.add("question-fadeout");
-          setTimeout(() => {
-            questions[currentIndex].style.display = "none";
-            currentIndex++;
-            showQuestion(currentIndex);
-          }, 300);
+          nextBtn.disabled = false;
         }
       });
     });
+  });
+
+  // Next button logic
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < questions.length - 1) {
+      questions[currentIndex].classList.remove("active");
+      questions[currentIndex].classList.add("question-fadeout");
+      setTimeout(() => {
+        questions[currentIndex].style.display = "none";
+        currentIndex++;
+        showQuestion(currentIndex);
+        nextBtn.disabled = true; // Disable until next selection
+      }, 300);
+    }
   });
 
   // Back button logic
@@ -252,7 +375,23 @@
 
   // Prevent auto submit on last question, show submit button instead
   form.addEventListener("submit", function(e) {
-    // Allow normal submit
+    // Check if all questions are answered
+    const answeredQuestions = new Set();
+    questions.forEach((q, index) => {
+      const selectedOption = q.querySelector('input[type="radio"]:checked');
+      if (selectedOption) {
+        answeredQuestions.add(index);
+      }
+    });
+    
+    if (answeredQuestions.size < questions.length) {
+      e.preventDefault();
+      {% if lang == "en" %}
+        alert('Please answer all questions before submitting.');
+      {% else %}
+        alert('لطفاً به همه سوالات پاسخ دهید.');
+      {% endif %}
+    }
   });
 </script>
 {% endblock %}

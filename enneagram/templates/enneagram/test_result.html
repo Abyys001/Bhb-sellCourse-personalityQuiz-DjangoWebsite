@@ -1,11 +1,12 @@
 {% extends "base.html" %}
-{% block title %}نتیجه تست{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "نتیجه تست" %}{% endblock %}
 {% block content %}
 <style>
   .dark-gold-theme {
     background: #181818;
     color: #e6c77b;
-    /* border-radius: 18px; */ /* Removed rounded border */
+    /* border-radius: 18px; */
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     padding: 40px 30px 30px 30px;
     text-align: center;
@@ -20,7 +21,7 @@
     display: inline-block;
     background: #2d2210;
     color: #ffd700;
-    /* border-radius: 8px; */ /* Removed rounded border */
+    /* border-radius: 8px; */
     padding: 6px 18px;
     font-size: 1.6rem;
     font-weight: bold;
@@ -38,7 +39,7 @@
   .dark-gold-theme .type-count {
     background: #23201a;
     color: #e6c77b;
-    /* border-radius: 6px; */ /* Removed rounded border */
+    /* border-radius: 6px; */
     padding: 6px 14px;
     font-size: 1rem;
     border: 1px solid #bfa14a;
@@ -51,12 +52,16 @@
   .dark-gold-theme .type-description-section {
     margin-top: 32px;
     background: #222018;
-    /* border-radius: 12px; */ /* Removed rounded border */
+    /* border-radius: 12px; */
     padding: 24px 18px;
     color: #ffe7a0;
     box-shadow: 0 2px 8px rgba(230,199,123,0.06);
     text-align: right;
     direction: rtl;
+  }
+  [dir="ltr"] .dark-gold-theme .type-description-section {
+    text-align: left;
+    direction: ltr;
   }
   .dark-gold-theme .type-description-section h3 {
     color: #ffd700;
@@ -70,40 +75,54 @@
     line-height: 2;
   }
 </style>
-<div class="question-box dark-gold-theme">
-  <h2>نتیجه تست شما</h2>
+<div class="question-box dark-gold-theme" dir="{% get_current_language as LANGUAGE_CODE %}{% if LANGUAGE_CODE == 'en' %}ltr{% else %}rtl{% endif %}">
+  <h2>{% trans "نتیجه تست شما" %}</h2>
   {% if enneagram_type %}
     <div style="font-size: 1.2rem; margin-bottom: 18px;">
-      شخصیت شما به احتمال زیاد
-      <span class="main-type">
-        تایپ {{ enneagram_type }}
-      </span>
-      است.
+      {% blocktrans with type=enneagram_type %}
+        شخصیت شما به احتمال زیاد
+        <span class="main-type">تایپ {{ type }}</span>
+        است.
+      {% plural %}
+        شخصیت شما به احتمال زیاد
+        <span class="main-type">Type {{ type }}</span>
+        است.
+      {% endblocktrans %}
     </div>
     <div class="type-counts">
       {% if counts %}
         {% for key, value in counts.items %}
           <span class="type-count">
-            تایپ {{ key }}: <strong>{{ value }}</strong>
+            {% blocktrans with key=key value=value %}
+              تایپ {{ key }}: <strong>{{ value }}</strong>
+            {% plural %}
+              Type {{ key }}: <strong>{{ value }}</strong>
+            {% endblocktrans %}
           </span>
         {% endfor %}
       {% else %}
-        <span class="type-count">هیچ آماری موجود نیست.</span>
+        <span class="type-count">{% trans "هیچ آماری موجود نیست." %}</span>
       {% endif %}
     </div>
     <div class="type-description-section">
-      <h3>درباره‌ی تیپ {{ enneagram_type }}</h3>
+      <h3>
+        {% blocktrans with type=enneagram_type %}
+          درباره‌ی تیپ {{ type }}
+        {% plural %}
+          About Type {{ type }}
+        {% endblocktrans %}
+      </h3>
       <p>
         {% if type_text %}
-        {{ type_text }}
+          {{ type_text }}
         {% else %}
-          توضیحی برای این تیپ وجود ندارد.
+          {% trans "توضیحی برای این تیپ وجود ندارد." %}
         {% endif %}
       </p>
     </div>
   {% else %}
     <div class="no-answer">
-      هیچ جوابی داده نشده!
+      {% trans "هیچ جوابی داده نشده!" %}
     </div>
   {% endif %}
 </div>

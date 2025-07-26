@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}حساب کاربری{% endblock %}
+{% load i18n %}
+
+{% block title %}{% trans "حساب کاربری" %}{% endblock %}
 
 {% block content %}
 <style>
@@ -131,62 +133,82 @@
 
 <div class="dashboard-container">
   <div class="dashboard-inner">
-    <h2>سلام {{ user.name|default:"کاربر عزیز" }}</h2>
+    <h2>
+      {% blocktrans with username=user.name|default:_("کاربر عزیز") %}
+        سلام {{ username }}
+      {% endblocktrans %}
+    </h2>
     <div class="user-info">
-      <p><span class="dashboard-meta">شماره موبایل:</span> {{ user.phone_number }}</p>
-      <p><span class="dashboard-meta">تاریخ عضویت:</span> {{ user.date_joined|date:"Y/m/d" }}</p>
+      <p>
+        <span class="dashboard-meta">{% trans "شماره موبایل:" %}</span>
+        {{ user.phone_number }}
+      </p>
+      <p>
+        <span class="dashboard-meta">{% trans "تاریخ عضویت:" %}</span>
+        {{ user.date_joined|date:"Y/m/d" }}
+      </p>
     </div>
 
     <div class="dashboard-summary">
       <p>
-        به پنل کاربری خود خوش آمدید. در این بخش می‌توانید وضعیت آزمون شخصیت، دسترسی به دوره‌ها و اطلاعات حساب خود را مشاهده و مدیریت کنید.
+        {% trans "به پنل کاربری خود خوش آمدید. در این بخش می‌توانید وضعیت آزمون شخصیت، دسترسی به دوره‌ها و اطلاعات حساب خود را مشاهده و مدیریت کنید." %}
         <br>
-        <span style="color:#e0c36b;">در صورت نیاز به پشتیبانی، با ما در ارتباط باشید.</span>
+        <span style="color:#e0c36b;">
+          {% trans "در صورت نیاز به پشتیبانی، با ما در ارتباط باشید." %}
+        </span>
       </p>
     </div>
 
     <div class="dashboard-section">
-      <h3>وضعیت آزمون شخصیت</h3>
+      <h3>{% trans "وضعیت آزمون شخصیت" %}</h3>
       {% if profile.enneagram_type %}
         <p>
-          تیپ شخصیتی شما: 
+          {% trans "تیپ شخصیتی شما:" %}
           <span style="color:#FFD700;font-weight:700;">{{ profile.enneagram_type }}</span>
         </p>
-        <a href="{% url 'enneagram_test' %}" class="dashboard-btn dashboard-btn-secondary" style="margin-top:0.5rem;">مشاهده مجدد آزمون</a>
+        <a href="{% url 'enneagram_test' %}" class="dashboard-btn dashboard-btn-secondary" style="margin-top:0.5rem;">
+          {% trans "مشاهده مجدد آزمون" %}
+        </a>
       {% else %}
-        <p>شما هنوز آزمون شخصیت را انجام نداده‌اید.</p>
-        <a href="{% url 'enneagram_test' %}" class="dashboard-btn">شروع آزمون شخصیت</a>
+        <p>{% trans "شما هنوز آزمون شخصیت را انجام نداده‌اید." %}</p>
+        <a href="{% url 'enneagram_test' %}" class="dashboard-btn">
+          {% trans "شروع آزمون شخصیت" %}
+        </a>
       {% endif %}
     </div>
 
     <div class="dashboard-section">
-      <h3>دسترسی به دوره آموزشی</h3>
+      <h3>{% trans "دسترسی به دوره آموزشی" %}</h3>
       {% if profile.has_purchased_course %}
-        <p>شما به دوره آموزشی دسترسی دارید.</p>
-        <a href="#" class="dashboard-btn">ورود به پنل دوره</a>
+        <p>{% trans "شما به دوره آموزشی دسترسی دارید." %}</p>
+        <a href="#" class="dashboard-btn">{% trans "ورود به پنل دوره" %}</a>
       {% else %}
-        <p>برای مشاهده محتوای دوره، ابتدا باید آن را تهیه کنید.</p>
-        <a href="{% url 'course_list' %}" class="dashboard-btn dashboard-btn-secondary">خرید دوره</a>
+        <p>{% trans "برای مشاهده محتوای دوره، ابتدا باید آن را تهیه کنید." %}</p>
+        <a href="{% url 'course_list' %}" class="dashboard-btn dashboard-btn-secondary">
+          {% trans "خرید دوره" %}
+        </a>
       {% endif %}
     </div>
 
     <div class="dashboard-section">
-      <h3>عملیات حساب کاربری</h3>
+      <h3>{% trans "عملیات حساب کاربری" %}</h3>
       <div class="dashboard-links">
-        <a href="{% url 'account' %}" class="dashboard-btn dashboard-btn-secondary">ویرایش اطلاعات کاربری</a>
-        <a href="{% url 'logout' %}" class="dashboard-btn dashboard-btn-secondary" style="background: #b22222; color: #fff; border: none;">خروج از حساب</a>
+        <a href="{% url 'account' %}" class="dashboard-btn dashboard-btn-secondary">
+          {% trans "ویرایش اطلاعات کاربری" %}
+        </a>
+        <a href="{% url 'logout' %}" class="dashboard-btn dashboard-btn-secondary" style="background: #b22222; color: #fff; border: none;">
+          {% trans "خروج از حساب" %}
+        </a>
       </div>
     </div>
 
     <div class="dashboard-section" style="text-align:center;">
-      <h3>پشتیبانی و ارتباط با ما</h3>
+      <h3>{% trans "پشتیبانی و ارتباط با ما" %}</h3>
       <p>
-        در صورت بروز هرگونه مشکل یا سوال، می‌توانید از طریق ایمیل 
-        <a href="mailto:support@example.com" style="color:#FFD700;">support@example.com</a>
-        یا شماره تماس <span style="direction:ltr;display:inline-block;">0912-000-0000</span> با تیم پشتیبانی در ارتباط باشید.
+        {% blocktrans %}در صورت بروز هرگونه مشکل یا سوال، می‌توانید از طریق ایمیل <a href="mailto:support@example.com" style="color:#FFD700;">support@example.com</a> یا شماره تماس <span style="direction:ltr;display:inline-block;">0912-000-0000</span> با تیم پشتیبانی در ارتباط باشید.{% endblocktrans %}
       </p>
       <p>
-        همچنین می‌توانید از بخش <a href="#" style="color:#FFD700;">سوالات متداول</a> بازدید کنید.
+        {% blocktrans %}همچنین می‌توانید از بخش <a href="#" style="color:#FFD700;">سوالات متداول</a> بازدید کنید.{% endblocktrans %}
       </p>
     </div>
   </div>

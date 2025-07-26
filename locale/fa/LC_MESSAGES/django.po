@@ -1,0 +1,906 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-26 13:40+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\accounts\templates\accounts\dashboard.html:5 .\accounts\views.py:41
+msgid "حساب کاربری"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:137
+msgid "کاربر عزیز"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:137
+#, python-format
+msgid ""
+"\n"
+"        سلام %(username)s\n"
+"      "
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:143
+msgid "شماره موبایل:"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:147
+msgid "تاریخ عضویت:"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:154
+msgid ""
+"به پنل کاربری خود خوش آمدید. در این بخش می‌توانید وضعیت آزمون شخصیت، دسترسی "
+"به دوره‌ها و اطلاعات حساب خود را مشاهده و مدیریت کنید."
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:157
+msgid "در صورت نیاز به پشتیبانی، با ما در ارتباط باشید."
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:163
+msgid "وضعیت آزمون شخصیت"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:166
+msgid "تیپ شخصیتی شما:"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:170
+msgid "مشاهده مجدد آزمون"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:173
+msgid "شما هنوز آزمون شخصیت را انجام نداده‌اید."
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:175
+msgid "شروع آزمون شخصیت"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:181
+msgid "دسترسی به دوره آموزشی"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:183
+msgid "شما به دوره آموزشی دسترسی دارید."
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:184
+msgid "ورود به پنل دوره"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:186
+msgid "برای مشاهده محتوای دوره، ابتدا باید آن را تهیه کنید."
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:188
+msgid "خرید دوره"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:194
+msgid "عملیات حساب کاربری"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:197
+msgid "ویرایش اطلاعات کاربری"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:200
+msgid "خروج از حساب"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:206
+msgid "پشتیبانی و ارتباط با ما"
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:208
+msgid ""
+"در صورت بروز هرگونه مشکل یا سوال، می‌توانید از طریق ایمیل <a "
+"href=\"mailto:support@example.com\" "
+"style=\"color:#FFD700;\">support@example.com</a> یا شماره تماس <span "
+"style=\"direction:ltr;display:inline-block;\">0912-000-0000</span> با تیم "
+"پشتیبانی در ارتباط باشید."
+msgstr ""
+
+#: .\accounts\templates\accounts\dashboard.html:211
+msgid ""
+"همچنین می‌توانید از بخش <a href=\"#\" style=\"color:#FFD700;\">سوالات متداول</"
+"a> بازدید کنید."
+msgstr ""
+
+#: .\accounts\templates\accounts\login.html:5
+msgid "ورود به حساب کاربری"
+msgstr ""
+
+#: .\accounts\templates\accounts\login.html:248
+msgid "خوش آمدید"
+msgstr ""
+
+#: .\accounts\templates\accounts\login.html:249
+msgid "لطفا اطلاعات حساب خود را وارد کنید"
+msgstr ""
+
+#: .\accounts\templates\accounts\login.html:270
+#: .\accounts\templates\accounts\register.html:53
+#: .\accounts\templates\accounts\register.html:54
+msgid "شماره تلفن"
+msgstr ""
+
+#: .\accounts\templates\accounts\login.html:280
+#: .\accounts\templates\accounts\register.html:61
+#: .\accounts\templates\accounts\register.html:62
+msgid "رمز عبور"
+msgstr ""
+
+#: .\accounts\templates\accounts\login.html:288
+msgid "رمز عبور را فراموش کرده‌اید؟"
+msgstr ""
+
+#: .\accounts\templates\accounts\login.html:292
+msgid "ورود به حساب"
+msgstr ""
+
+#: .\accounts\templates\accounts\login.html:296
+msgid "حساب ندارید؟"
+msgstr ""
+
+#: .\accounts\templates\accounts\login.html:296
+msgid "ثبت‌نام کنید"
+msgstr ""
+
+#: .\accounts\templates\accounts\register.html:5
+msgid "فرم ثبت‌نام"
+msgstr ""
+
+#: .\accounts\templates\accounts\register.html:51
+#: .\accounts\templates\accounts\register.html:68
+msgid "ثبت‌نام"
+msgstr ""
+
+#: .\accounts\templates\accounts\register.html:57
+#: .\accounts\templates\accounts\register.html:58
+msgid "نام"
+msgstr ""
+
+#: .\accounts\templates\accounts\register.html:65
+#: .\accounts\templates\accounts\register.html:66
+msgid "تکرار رمز عبور"
+msgstr ""
+
+#: .\accounts\templates\accounts\register.html:71
+msgid "حساب دارید؟"
+msgstr ""
+
+#: .\accounts\templates\accounts\register.html:71 .\accounts\views.py:35
+#: .\templates\includes\navbar.html:265
+msgid "ورود"
+msgstr ""
+
+#: .\accounts\views.py:19
+msgid "ثبت نام"
+msgstr ""
+
+#: .\accounts\views.py:20
+msgid "لطفاً فرم زیر را برای ثبت نام تکمیل کنید."
+msgstr ""
+
+#: .\accounts\views.py:36
+msgid "لطفاً اطلاعات کاربری خود را وارد کنید."
+msgstr ""
+
+#: .\accounts\views.py:42
+msgid "به صفحه حساب کاربری خود خوش آمدید."
+msgstr ""
+
+#: .\accounts\views.py:58
+msgid "داشبورد"
+msgstr ""
+
+#: .\accounts\views.py:59
+msgid "به داشبورد خود خوش آمدید."
+msgstr ""
+
+#: .\courses\templates\courses\course_detail.html:12
+msgid "دوره تخصصی"
+msgstr ""
+
+#: .\courses\templates\courses\course_list.html:15
+msgid "دوره‌های تخصصی آموزشی"
+msgstr ""
+
+#: .\courses\templates\courses\course_list.html:31
+msgid "ویژه"
+msgstr ""
+
+#: .\courses\templates\courses\course_list.html:61
+#, python-format
+msgid "%(course.level)s"
+msgstr ""
+
+#: .\courses\templates\courses\course_list.html:70
+msgid "هزینه دوره:"
+msgstr ""
+
+#: .\courses\templates\courses\course_list.html:74
+msgid "تومان"
+msgstr ""
+
+#: .\courses\templates\courses\course_list.html:76
+msgid "Toman"
+msgstr ""
+
+#: .\courses\templates\courses\course_list.html:83
+msgid "مشاهده جزئیات"
+msgstr ""
+
+#: .\courses\templates\courses\course_list.html:85
+msgid "افزودن به علاقه‌مندی‌ها"
+msgstr ""
+
+#: .\courses\templates\courses\course_list.html:106
+msgid ""
+"در حال حاضر هیچ دوره‌ای موجود نیست. به زودی دوره‌های جدید اضافه خواهند شد."
+msgstr ""
+
+#: .\courses\templates\courses\payresult.html:6
+msgid "نتیجه پرداخت"
+msgstr ""
+
+#: .\courses\templates\courses\payresult.html:151
+msgid ""
+"\n"
+"                    پرداخت موفق!\n"
+"                "
+msgid_plural ""
+"\n"
+"                    Payment Successful!\n"
+"                "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\courses\templates\courses\payresult.html:158
+msgid ""
+"\n"
+"                    پرداخت شما با موفقیت انجام شد.<br>\n"
+"                    دسترسی شما به دوره فعال گردید.\n"
+"                "
+msgid_plural ""
+"\n"
+"                    Your payment was successful.<br>\n"
+"                    Your access to the course has been activated.\n"
+"                "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\courses\templates\courses\payresult.html:169
+#: .\courses\templates\courses\payresult.html:201
+#: .\courses\templates\courses\payresult.html:227
+#: .\courses\templates\courses\payresult.html:253 .\templates\404.html:68
+msgid "بازگشت به خانه"
+msgid_plural "Back to Home"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\courses\templates\courses\payresult.html:174
+msgid "رفتن به صفحه دوره"
+msgid_plural "Go to Course Page"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\courses\templates\courses\payresult.html:183
+msgid ""
+"\n"
+"                    پرداخت ناموفق\n"
+"                "
+msgid_plural ""
+"\n"
+"                    Payment Failed\n"
+"                "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\courses\templates\courses\payresult.html:190
+msgid ""
+"\n"
+"                    متاسفانه پرداخت شما انجام نشد.<br>\n"
+"                    لطفا مجددا تلاش کنید یا با پشتیبانی تماس بگیرید.\n"
+"                "
+msgid_plural ""
+"\n"
+"                    Unfortunately, your payment was not successful.<br>\n"
+"                    Please try again or contact support.\n"
+"                "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\courses\templates\courses\payresult.html:209
+msgid ""
+"\n"
+"                    پرداخت لغو شد\n"
+"                "
+msgid_plural ""
+"\n"
+"                    Payment Cancelled\n"
+"                "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\courses\templates\courses\payresult.html:216
+msgid ""
+"\n"
+"                    شما پرداخت را لغو کردید.<br>\n"
+"                    در صورت نیاز می‌توانید دوباره اقدام کنید.\n"
+"                "
+msgid_plural ""
+"\n"
+"                    You cancelled the payment.<br>\n"
+"                    You can try again if needed.\n"
+"                "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\courses\templates\courses\payresult.html:235
+msgid ""
+"\n"
+"                    وضعیت نامشخص\n"
+"                "
+msgid_plural ""
+"\n"
+"                    Unknown Status\n"
+"                "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\courses\templates\courses\payresult.html:242
+msgid ""
+"\n"
+"                    وضعیت پرداخت مشخص نیست.<br>\n"
+"                    لطفا با پشتیبانی تماس بگیرید.\n"
+"                "
+msgid_plural ""
+"\n"
+"                    Payment status is unknown.<br>\n"
+"                    Please contact support.\n"
+"                "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\courses\templates\courses\purchase_guide.html:6
+#: .\courses\templates\courses\purchase_guide.html:266 .\courses\views.py:46
+msgid "راهنمای خرید دوره"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:250
+msgid "حداقل قیمت دوره:"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:254
+msgid "قیمت واقعی این دوره ۱۵,۰۰۰,۰۰۰ تومان است."
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:257
+msgid ""
+"این قیمت پایین (۳۰۰ هزار تومان) برای افرادی است که شرایط مالی مناسبی ندارند "
+"تا بتوانند از آموزش‌ها استفاده کنند."
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:260
+msgid ""
+"اگر توانایی مالی دارید، لطفاً تا سقف ۱۵ میلیون تومان (قیمت واقعی دوره) واریز "
+"کنید تا از تولید محتوای آموزشی حمایت شود."
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:270
+msgid "مراحل خرید:"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:275
+msgid "از طریق یکی از روش‌های زیر با ما تماس بگیرید"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:282
+msgid "نام دوره و اطلاعات خود را ارسال کنید"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:289
+msgid "پرداخت را انجام دهید"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:296
+msgid "دسترسی شما به دوره فعال خواهد شد"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:304
+#: .\courses\templates\courses\purchase_guide.html:334
+msgid "تلگرام"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:305
+msgid "از طریق تلگرام با ما در تماس باشید"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:307
+msgid "ارسال پیام در تلگرام"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:313
+#: .\courses\templates\courses\purchase_guide.html:335
+msgid "اینستاگرام"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:314
+msgid "از طریق اینستاگرام با ما در تماس باشید"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:316
+msgid "ارسال پیام در اینستاگرام"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:323
+#: .\courses\templates\courses\purchase_guide.html:357
+msgid "ثبت درخواست خرید"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:330
+msgid "روش تماس:"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:333
+msgid "انتخاب کنید"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:341
+msgid "اطلاعات تماس (نام کاربری تلگرام یا اینستاگرام):"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:344
+msgid "مثال: @username یا شماره تلفن"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:349
+msgid "پیام (اختیاری):"
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:352
+msgid "پیام خود را اینجا بنویسید..."
+msgstr ""
+
+#: .\courses\templates\courses\purchase_guide.html:365
+msgid "بازگشت به صفحه دوره"
+msgstr ""
+
+#: .\courses\views.py:15 .\templates\includes\navbar.html:187
+msgid "دوره‌ها"
+msgstr ""
+
+#: .\courses\views.py:16
+msgid "دوره‌های موجود را مشاهده کنید."
+msgstr ""
+
+#: .\courses\views.py:30
+msgid "شما به این دوره دسترسی دارید."
+msgstr ""
+
+#: .\courses\views.py:30
+msgid "برای دسترسی به محتوای این دوره باید آن را خریداری کنید."
+msgstr ""
+
+#: .\courses\views.py:39 .\courses\views.py:66
+msgid "شما قبلاً این دوره را خریداری کرده‌اید."
+msgstr ""
+
+#: .\courses\views.py:48
+msgid "برای خرید این دوره، لطفاً با ما در تلگرام یا اینستاگرام تماس بگیرید."
+msgstr ""
+
+#: .\courses\views.py:56
+msgid "دوره با موفقیت خریداری شد."
+msgstr ""
+
+#: .\courses\views.py:74
+msgid "لطفاً روش تماس و اطلاعات تماس را وارد کنید."
+msgstr ""
+
+#: .\courses\views.py:86
+msgid "درخواست خرید شما با موفقیت ثبت شد. به زودی با شما تماس خواهیم گرفت."
+msgstr ""
+
+#: .\courses\views.py:95
+#, python-format
+msgid "خرید دوره %(title)s"
+msgstr ""
+
+#: .\courses\views.py:109 .\courses\views.py:136
+msgid "خطا در اتصال به درگاه پرداخت."
+msgstr ""
+
+#: .\courses\views.py:115
+msgid "خطا در ارتباط با درگاه پرداخت."
+msgstr ""
+
+#: .\courses\views.py:139
+msgid "خطا در ارتباط با زرین‌پال."
+msgstr ""
+
+#: .\courses\views.py:144
+msgid "پرداخت با موفقیت انجام شد و دسترسی به دوره برای شما فعال گردید."
+msgstr ""
+
+#: .\courses\views.py:147
+msgid "پرداخت توسط درگاه تایید نشد."
+msgstr ""
+
+#: .\courses\views.py:155
+msgid "پرداخت توسط کاربر لغو شد."
+msgstr ""
+
+#: .\courses\views.py:158
+msgid "شما پرداخت را لغو کردید."
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:6
+#: .\enneagram\templates\enneagram\test.html:195 .\enneagram\views.py:59
+msgid "Enneagram Test"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:8
+#: .\enneagram\templates\enneagram\test.html:197
+#: .\pages\templates\pages\home.html:26 .\templates\includes\navbar.html:184
+msgid "آزمون انیاگرام"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:202
+#, python-format
+msgid ""
+"\n"
+"              This test contains %(questions_count)s questions.\n"
+"            "
+msgid_plural ""
+"\n"
+"              This test contains %(questions_count)s questions.\n"
+"            "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\enneagram\templates\enneagram\test.html:208
+#, python-format
+msgid ""
+"\n"
+"              این آزمون شامل %(questions_count)s سوال می‌باشد\n"
+"            "
+msgid_plural ""
+"\n"
+"              این آزمون شامل %(questions_count)s سوال می‌باشد\n"
+"            "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\enneagram\templates\enneagram\test.html:217
+msgid "Please answer the questions carefully."
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:219
+msgid "لطفاً با دقت به سوالات پاسخ دهید"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:225
+msgid "Start Test"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:227
+msgid "شروع آزمون"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:258
+msgid "Next"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:260
+msgid "بعدی"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:265
+msgid "Back"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:267
+msgid "قبلی"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:272
+msgid "Submit"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test.html:274
+msgid "ارسال"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test_result.html:3
+msgid "نتیجه تست"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test_result.html:79
+msgid "نتیجه تست شما"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test_result.html:82
+#, python-format
+msgid ""
+"\n"
+"        شخصیت شما به احتمال زیاد\n"
+"        <span class=\"main-type\">تایپ %(type)s</span>\n"
+"        است.\n"
+"      "
+msgid_plural ""
+"\n"
+"        شخصیت شما به احتمال زیاد\n"
+"        <span class=\"main-type\">Type %(type)s</span>\n"
+"        است.\n"
+"      "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\enneagram\templates\enneagram\test_result.html:96
+#, python-format
+msgid ""
+"\n"
+"              تایپ %(key)s: <strong>%(value)s</strong>\n"
+"            "
+msgid_plural ""
+"\n"
+"              Type %(key)s: <strong>%(value)s</strong>\n"
+"            "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\enneagram\templates\enneagram\test_result.html:104
+msgid "هیچ آماری موجود نیست."
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test_result.html:109
+#, python-format
+msgid ""
+"\n"
+"          درباره‌ی تیپ %(type)s\n"
+"        "
+msgid_plural ""
+"\n"
+"          About Type %(type)s\n"
+"        "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\enneagram\templates\enneagram\test_result.html:119
+msgid "توضیحی برای این تیپ وجود ندارد."
+msgstr ""
+
+#: .\enneagram\templates\enneagram\test_result.html:125
+msgid "هیچ جوابی داده نشده!"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:6
+#, python-format
+msgid ""
+"\n"
+"        تیپ %(type_number)s انیاگرام - %(title)s\n"
+"    "
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:20
+#, python-format
+msgid ""
+"\n"
+"                تیپ %(type_number)s: %(title)s\n"
+"            "
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:29
+msgid "معرفی تیپ"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:36
+msgid "نقاط قوت"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:42
+msgid "نقاط ضعف"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:49
+msgid "راهکارهای رشد"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:56
+msgid "روابط"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:62
+msgid "مسیر شغلی"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:70
+msgid "افراد مشهور این تیپ"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:80
+msgid "تیپ‌های مرتبط"
+msgstr ""
+
+#: .\enneagram\templates\enneagram\type_detail.html:87
+#, python-format
+msgid ""
+"\n"
+"                                تیپ %(type_number)s: %(title)s\n"
+"                            "
+msgstr ""
+
+#: .\enneagram\views.py:59
+msgid "تست اینیاگرام"
+msgstr ""
+
+#: .\enneagram\views.py:60
+msgid "لطفاً به سوالات زیر پاسخ دهید تا تیپ اینیاگرام خود را کشف کنید."
+msgstr ""
+
+#: .\enneagram\views.py:60
+msgid "Please answer the following questions to discover your Enneagram type."
+msgstr ""
+
+#: .\enneagram\views.py:61
+msgid "لطفاً به همه سوالات پاسخ دهید."
+msgstr ""
+
+#: .\enneagram\views.py:73
+#, python-format
+msgid "تیپ اینیاگرام %(type_number)s"
+msgstr ""
+
+#: .\enneagram\views.py:74
+msgid "ممکن است به این تیپ‌های مرتبط نیز علاقه‌مند باشید:"
+msgstr ""
+
+#: .\pages\templates\pages\about.html:11 .\templates\includes\footer.html:18
+#: .\templates\includes\navbar.html:190
+msgid "درباره ما"
+msgstr ""
+
+#: .\pages\templates\pages\about.html:22
+msgid "داستان ساده ما"
+msgstr ""
+
+#: .\pages\templates\pages\about.html:25
+msgid ""
+"\n"
+"            ما یه تیم کوچیک و پرانرژی هستیم که عاشق یادگیری و یاد دادنیم!  \n"
+"            این سایت رو ساختیم تا بتونیم تجربه‌هامون رو با بقیه به اشتراک "
+"بذاریم و یه فضای دوستانه برای رشد و آموزش ایجاد کنیم.\n"
+"            <br><br>\n"
+"            اینجا خبری از شعارهای عجیب و غریب نیست؛ فقط دوست داریم کنار هم، "
+"ساده و صمیمی، چیزای جدید یاد بگیریم و حال خوب بسازیم.\n"
+"            <br>\n"
+"            اگر سوالی داشتی یا دوست داشتی بیشتر باهامون آشنا بشی، خوشحال "
+"می‌شیم بهمون پیام بدی :)\n"
+"            "
+msgstr ""
+
+#: .\pages\templates\pages\about.html:43
+msgid "ارزش‌های ما"
+msgstr ""
+
+#: .\pages\templates\pages\about.html:50
+msgid "یادگیری باحال"
+msgstr ""
+
+#: .\pages\templates\pages\about.html:52
+msgid ""
+"همیشه دنبال یاد گرفتن چیزای جدید و باحالیم و دوست داریم این حس رو منتقل کنیم."
+msgstr ""
+
+#: .\pages\templates\pages\about.html:60
+msgid "رفاقت و صمیمیت"
+msgstr ""
+
+#: .\pages\templates\pages\about.html:62
+msgid "اینجا همه مثل یه جمع دوستانه کنار همیم و هوای همو داریم."
+msgstr ""
+
+#: .\pages\templates\pages\about.html:70
+msgid "ساده و قابل فهم"
+msgstr ""
+
+#: .\pages\templates\pages\about.html:72
+msgid ""
+"سعی می‌کنیم همه چیز رو ساده و قابل فهم توضیح بدیم تا همه بتونن استفاده کنن."
+msgstr ""
+
+#: .\pages\templates\pages\about.html:84
+msgid "ارتباط با ما"
+msgstr ""
+
+#: .\pages\templates\pages\about.html:87
+msgid ""
+"اگر دوست داشتی با ما در ارتباط باشی یا پیشنهادی داشتی، می‌تونی به <a "
+"href=\"mailto:support@example.com\" "
+"style=\"color:#FFD700;\">support@example.com</a> ایمیل بزنی یا از طریق فرم "
+"تماس سایت پیام بدی. <br> همیشه منتظر شنیدن صدای شما هستیم!"
+msgstr ""
+
+#: .\pages\templates\pages\home.html:6 .\templates\includes\footer.html:17
+#: .\templates\includes\navbar.html:181
+msgid "خانه"
+msgstr ""
+
+#: .\pages\templates\pages\home.html:24
+msgid "به Bhbrand خوش آمدید"
+msgstr ""
+
+#: .\pages\templates\pages\home.html:25
+msgid "با ما آینده‌ای روشن و حرفه‌ای بسازید."
+msgstr ""
+
+#: .\pages\templates\pages\home.html:36
+msgid "نوآوری"
+msgstr ""
+
+#: .\pages\templates\pages\home.html:37
+msgid "راه‌حل‌های خلاقانه برای رشد شما"
+msgstr ""
+
+#: .\pages\templates\pages\home.html:43
+msgid "تیم حرفه‌ای"
+msgstr ""
+
+#: .\pages\templates\pages\home.html:44
+msgid "همراه با تخصص و تعهد بالا"
+msgstr ""
+
+#: .\pages\templates\pages\home.html:50
+msgid "پشتیبانی ۲۴/۷"
+msgstr ""
+
+#: .\pages\templates\pages\home.html:51
+msgid "همیشه در کنار شما"
+msgstr ""
+
+#: .\templates\404.html:4
+msgid "صفحه پیدا نشد | 404"
+msgstr ""
+
+#: .\templates\404.html:65
+msgid "صفحه مورد نظر یافت نشد!"
+msgstr ""
+
+#: .\templates\404.html:66
+msgid "آدرس وارد شده وجود ندارد یا حذف شده است."
+msgstr ""
+
+#: .\templates\includes\footer.html:22
+msgid "تمامی حقوق محفوظ است"
+msgstr ""
+
+#: .\templates\includes\footer.html:24
+msgid "ساخته شده با"
+msgstr ""
+
+#: .\templates\includes\navbar.html:259
+msgid "حساب کاربری من"
+msgstr ""
+
+#: .\templates\includes\navbar.html:262
+msgid "خروج"
+msgstr ""

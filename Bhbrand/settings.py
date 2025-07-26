@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "enneagram",
     "courses",
     # third party apps
-    "ckeditor",
+    "ckeditor",  
 ]
 
 MIDDLEWARE = [
@@ -53,8 +53,9 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware', 
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',      
 ]
 
 CSRF_COOKIE_SECURE = False
@@ -120,11 +121,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'fa-ir'
+LANGUAGE_CODE = 'fa'
+USE_I18N = True      
+USE_L10N = True      
+LANGUAGES = [
+    ('fa', 'فارسی'),
+    ('en', 'English'),
+]
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 
 TIME_ZONE = 'Asia/Tehran'
-
-USE_I18N = True
 
 USE_TZ = True
 
@@ -157,6 +165,13 @@ ZARINPAL_SANDBOX_URL = "https://sandbox.zarinpal.com/pg/v4/payment/request.json"
 ZARINPAL_SANDBOX_VERIFY_URL = "https://sandbox.zarinpal.com/pg/v4/payment/verify.json"
 
 
-
-
+# security
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 31536000  # یک سال
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
 

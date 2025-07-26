@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}تیپ {{ type.type_number }} انیاگرام - {{ type.title }}{% endblock %}
+{% block title %}
+    {% blocktrans with type_number=type.type_number title=type.title %}
+        تیپ {{ type_number }} انیاگرام - {{ title }}
+    {% endblocktrans %}
+{% endblock %}
 
 {% block content %}
 <style>
@@ -11,46 +16,50 @@
 </style>
 <div class="enneagram-container" style="border-color: {{ type.color_code }};">
     <div class="enneagram-header">
-        <h1>تیپ {{ type.type_number }}: {{ type.title }}</h1>
+        <h1>
+            {% blocktrans with type_number=type.type_number title=type.title %}
+                تیپ {{ type_number }}: {{ title }}
+            {% endblocktrans %}
+        </h1>
         <p class="short-desc">{{ type.short_description }}</p>
     </div>
 
     <div class="enneagram-content">
         <section class="type-section">
-            <h2 style="color: {{ type.color_code }};">معرفی تیپ</h2>
+            <h2 style="color: {{ type.color_code }};">{% trans "معرفی تیپ" %}</h2>
             <div class="content-box">{{ type.overview|safe }}</div>
         </section>
 
         <div class="row">
             <div class="col-md-6">
                 <section class="type-section">
-                    <h2 style="color: {{ type.color_code }};">نقاط قوت</h2>
+                    <h2 style="color: {{ type.color_code }};">{% trans "نقاط قوت" %}</h2>
                     <div class="content-box">{{ type.strengths|safe }}</div>
                 </section>
             </div>
             <div class="col-md-6">
                 <section class="type-section">
-                    <h2 style="color: {{ type.color_code }};">نقاط ضعف</h2>
+                    <h2 style="color: {{ type.color_code }};">{% trans "نقاط ضعف" %}</h2>
                     <div class="content-box">{{ type.weaknesses|safe }}</div>
                 </section>
             </div>
         </div>
 
         <section class="type-section">
-            <h2 style="color: {{ type.color_code }};">راهکارهای رشد</h2>
+            <h2 style="color: {{ type.color_code }};">{% trans "راهکارهای رشد" %}</h2>
             <div class="content-box">{{ type.growth_tips|safe }}</div>
         </section>
 
         <div class="row">
             <div class="col-md-6">
                 <section class="type-section">
-                    <h2 style="color: {{ type.color_code }};">روابط</h2>
+                    <h2 style="color: {{ type.color_code }};">{% trans "روابط" %}</h2>
                     <div class="content-box">{{ type.relationships|safe }}</div>
                 </section>
             </div>
             <div class="col-md-6">
                 <section class="type-section">
-                    <h2 style="color: {{ type.color_code }};">مسیر شغلی</h2>
+                    <h2 style="color: {{ type.color_code }};">{% trans "مسیر شغلی" %}</h2>
                     <div class="content-box">{{ type.career_paths|safe }}</div>
                 </section>
             </div>
@@ -58,7 +67,7 @@
 
         {% if type.famous_examples %}
         <section class="type-section">
-            <h2 style="color: {{ type.color_code }};">افراد مشهور این تیپ</h2>
+            <h2 style="color: {{ type.color_code }};">{% trans "افراد مشهور این تیپ" %}</h2>
             <div class="content-box">
                 <p>{{ type.famous_examples }}</p>
             </div>
@@ -68,13 +77,17 @@
 
     {% if related_types %}
     <div class="related-types">
-        <h3>تیپ‌های مرتبط</h3>
+        <h3>{% trans "تیپ‌های مرتبط" %}</h3>
         <div class="row">
             {% for related in related_types %}
             <div class="col-md-6">
                 <div class="related-card">
                     <a href="{% url 'type_detail' related.type_number %}">
-                        <h4>تیپ {{ related.type_number }}: {{ related.title }}</h4>
+                        <h4>
+                            {% blocktrans with type_number=related.type_number title=related.title %}
+                                تیپ {{ type_number }}: {{ title }}
+                            {% endblocktrans %}
+                        </h4>
                         <p>{{ related.short_description }}</p>
                     </a>
                 </div>
