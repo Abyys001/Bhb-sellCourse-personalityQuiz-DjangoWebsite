@@ -46,7 +46,6 @@ class Lesson(models.Model):
     order = models.PositiveIntegerField(default=0, verbose_name="ترتیب")
     
     class Meta:
-        ordering = ['order']
         verbose_name = "درس"
         verbose_name_plural = "درس‌ها"
     

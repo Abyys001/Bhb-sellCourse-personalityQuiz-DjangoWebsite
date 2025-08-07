@@ -500,7 +500,7 @@ msgstr "The actual price of this course is 15,000,000 Toman."
 
 #: .\courses\templates\courses\purchase_guide.html:257
 msgid ""
-"این قیمت پایین (۳۰۰ هزار تومان) برای افرادی است که شرایط مالی مناسبی ندارند "
+"این  پایین (۳۰۰ هزار تومان) برای افرادی است که شرایط مالی مناسبی ندارند "
 "تا بتوانند از آموزش‌ها استفاده کنند."
 msgstr ""
 "This low price (300 thousand Toman) is for those who are not financially "

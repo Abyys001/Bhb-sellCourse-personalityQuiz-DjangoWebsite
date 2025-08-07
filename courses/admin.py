@@ -6,7 +6,6 @@ class LessonInline(admin.TabularInline):
     model = Lesson
     extra = 1
     fields = ('order', 'title', 'video_url', 'video_file', 'description')
-    ordering = ('order',)
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):

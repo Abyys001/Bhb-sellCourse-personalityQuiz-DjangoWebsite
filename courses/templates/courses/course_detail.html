@@ -96,16 +96,23 @@
                 <div class="accordion-body p-4 bg-blackgold">
                   <!-- محتوای درس -->
                   {% if has_access %}
-                    {% if lesson.video_file %}
-                      <div class="ratio ratio-16x9 mb-4" style="border: 2px solid #FFD700; border-radius: 0.7rem; overflow: hidden;">
-                        <video controls class="w-100" poster="{{ lesson.image.url|default_if_none:'' }}">
-                          <source src="{{ lesson.video_file.url }}" type="video/mp4">
-                          مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند
-                        </video>
+                    {% if lesson.video_file or lesson.video_url %}
+                      <div class="text-center mb-4">
+                        <div class="alert alert-info bg-dark border-gold mb-3" style="color: #FFD700;">
+                          <i class="fas fa-info-circle me-2"></i>
+                          برای مشاهده این قسمت کلیک کنید
+                        </div>
+                        <a href="{% url 'lesson_detail' course.id lesson.id %}" class="btn btn-gold-black btn-lg">
+                          <i class="fas fa-play-circle me-2"></i>
+                          مشاهده ویدیو
+                        </a>
                       </div>
-                    {% elif lesson.video_url %}
-                      <div class="ratio ratio-16x9 mb-4" style="border: 2px solid #FFD700; border-radius: 0.7rem; overflow: hidden;">
-                        <iframe src="{{ lesson.video_url }}" allowfullscreen style="background: #000;"></iframe>
+                    {% else %}
+                      <div class="text-center mb-4">
+                        <div class="alert alert-warning bg-dark border-gold mb-3" style="color: #FFD700;">
+                          <i class="fas fa-info-circle me-2"></i>
+                          این درس فاقد ویدیو است
+                        </div>
                       </div>
                     {% endif %}
                   {% else %}
@@ -139,6 +146,7 @@
             {% endfor %}
           </div>
         </div>
+
       </div>
       
       <!-- Sidebar -->

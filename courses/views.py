@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.translation import gettext as _
 from django.contrib import messages
 import requests
-from .models import Course, UserCourse, PurchaseRequest
+from .models import Course, UserCourse, PurchaseRequest, Lesson
 
 def course_list(request):
     courses = Course.objects.all()
@@ -157,3 +157,22 @@ def verify(request, pk):
             'success': False,
             'message': _("شما پرداخت را لغو کردید."),
         })
+
+@login_required
+def lesson_detail(request, course_id, lesson_id):
+    course = get_object_or_404(Course, id=course_id)
+    lesson = get_object_or_404(Lesson, id=lesson_id, course=course)
+    
+    # بررسی دسترسی کاربر به دوره
+    has_access = UserCourse.objects.filter(user=request.user, course=course).exists()
+    
+    if not has_access:
+        messages.error(request, _("شما به این درس دسترسی ندارید. لطفاً ابتدا دوره را خریداری کنید."))
+        return redirect('course_detail', course_id=course.id)
+    
+    return render(request, 'courses/lesson_detail.html', {
+        'course': course,
+        'lesson': lesson,
+        'has_access': has_access,
+        'title': f"{course.title} - {lesson.title}",
+    })

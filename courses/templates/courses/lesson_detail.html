@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<section class="lesson-detail-section">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="lesson-header mb-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb-custom">
+          <li>
+            <a href="{% url 'course_list' %}">{% trans "دوره‌ها" %}</a>
+          </li>
+          <li>
+            <a href="{% url 'course_detail' course.id %}">{{ course.title }}</a>
+          </li>
+          <li class="active">{{ lesson.title }}</li>
+        </ol>
+      </nav>
+      <div class="text-center mt-3">
+        <span class="lesson-badge">{% trans "درس" %}</span>
+        <h1 class="lesson-title mt-2">{{ lesson.title }}</h1>
+        <div class="lesson-subtitle">{{ course.title }}</div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <!-- Video Player Section -->
+        <div class="video-section mb-4">
+          {% if lesson.video_file %}
+            <div class="video-container">
+              <video 
+                controls 
+                class="w-100"
+                poster="{{ lesson.image.url|default_if_none:'' }}"
+                preload="metadata"
+                playsinline
+                controlsList="nodownload"
+              >
+                <source src="{{ lesson.video_file.url }}" type="video/mp4">
+                {% trans "مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند" %}
+              </video>
+            </div>
+          {% elif lesson.video_url %}
+            <div class="video-container">
+              <iframe 
+                src="{{ lesson.video_url }}{% if '?' in lesson.video_url %}&{% else %}?{% endif %}autoplay=0"
+                allowfullscreen
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                frameborder="0"
+              ></iframe>
+            </div>
+          {% else %}
+            <div class="no-video text-center py-5">
+              <span class="no-video-icon">&#9632;</span>
+              <p class="text-muted mb-0">{% trans "ویدیویی برای این درس موجود نیست" %}</p>
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Lesson Description -->
+        {% if lesson.description %}
+        <div class="lesson-description-section mb-4">
+          <div class="lesson-description">
+            {{ lesson.description|linebreaks }}
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Attachment Section -->
+        {% if lesson.attachment %}
+        <div class="attachment-section mb-4">
+          <a href="{{ lesson.attachment.url }}" class="btn-custom" download>
+            {% trans "دانلود فایل ضمیمه" %}
+          </a>
+        </div>
+        {% endif %}
+      </div>
+      
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="lesson-sidebar sticky-top" style="top: 24px;">
+          <!-- Course Info -->
+          <div class="course-info mb-4">
+            <ul>
+              <li>
+                <span>{% trans "عنوان دوره:" %}</span>
+                <span>{{ course.title }}</span>
+              </li>
+              <li>
+                <span>{% trans "تاریخ انتشار:" %}</span>
+                <span>{{ course.created_at|date:"Y/m/d" }}</span>
+              </li>
+              <li>
+                <span>{% trans "تعداد درس‌ها:" %}</span>
+                <span>{{ course.lessons.count }}</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Navigation -->
+          <div class="nav-links">
+            <a href="{% url 'course_detail' course.id %}" class="btn-custom w-100 mb-2">
+              {% trans "بازگشت به دوره" %}
+            </a>
+            <a href="{% url 'course_list' %}" class="btn-custom-outline w-100">
+              {% trans "لیست همه دوره‌ها" %}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+<style>
+body {
+  background: #101010;
+  font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eaeaea;
+  margin: 0;
+}
+.lesson-detail-section {
+  min-height: 100vh;
+  padding: 2.5rem 0 1.5rem 0;
+  background: linear-gradient(135deg, #101010 0%, #181818 100%);
+}
+.lesson-header {
+  background: none;
+  border: none;
+  padding: 0 0 1.5rem 0;
+}
+.breadcrumb-custom {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.98rem;
+  color: #bdbdbd;
+  background: none;
+}
+.breadcrumb-custom li {
+  display: flex;
+  align-items: center;
+}
+.breadcrumb-custom li:not(:last-child)::after {
+  content: "/";
+  margin: 0 0.5rem;
+  color: #FFD700;
+  font-weight: bold;
+}
+.breadcrumb-custom a {
+  color: #FFD700;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-custom a:hover {
+  color: #fff;
+}
+.breadcrumb-custom .active {
+  color: #fff;
+  font-weight: 500;
+}
+.lesson-badge {
+  display: inline-block;
+  background: #FFD700;
+  color: #181818;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.3rem 1.2rem;
+  letter-spacing: 0.02em;
+}
+.lesson-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin: 0.5rem 0 0.2rem 0;
+  line-height: 1.2;
+}
+.lesson-subtitle {
+  color: #bdbdbd;
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.video-section {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.video-container {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #181818;
+  border: 1px solid #232323;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+.video-container video,
+.video-container iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border: none;
+  display: block;
+}
+.no-video {
+  color: #888;
+  font-size: 1.1rem;
+}
+.no-video-icon {
+  font-size: 2.5rem;
+  color: #444;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.lesson-description-section {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.lesson-description {
+  background: #181818;
+  border-radius: 0.7rem;
+  padding: 1.2rem 1.3rem;
+  color: #FFD700;
+  border-left: 3px solid #FFD700;
+  transition: all 0.3s;
+}
+.lesson-description:hover {
+  background: #232323;
+  border-left: 3px solid #e0b800;
+}
+.attachment-section {
+  margin-bottom: 1.5rem;
+}
+.btn-custom, .btn-custom-outline {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.7rem;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.btn-custom {
+  background: linear-gradient(135deg, #FFD700 0%, #e0b800 100%);
+  color: #181818;
+  border: none;
+}
+.btn-custom:hover {
+  background: linear-gradient(135deg, #e0b800 0%, #FFD700 100%);
+  color: #181818;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+.btn-custom-outline {
+  background: transparent;
+  color: #FFD700;
+  border: 2px solid #FFD700;
+}
+.btn-custom-outline:hover {
+  background: rgba(255, 215, 0, 0.1);
+  color: #FFD700;
+}
+.lesson-sidebar {
+  background: #181818;
+  border-radius: 1rem;
+  padding: 1.2rem 1.1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  border: 1px solid #232323;
+}
+.course-info {
+  margin-bottom: 1.5rem;
+}
+.course-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.course-info li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFD700;
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+  background: #232323;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.8rem;
+}
+.course-info li span:first-child {
+  color: #bdbdbd;
+  font-weight: 400;
+}
+.course-info li span:last-child {
+  color: #FFD700;
+  font-weight: 600;
+}
+.nav-links {
+  margin-top: 1.5rem;
+}
+@media (max-width: 992px) {
+  .lesson-title {
+    font-size: 1.5rem;
+  }
+  .lesson-description {
+    font-size: 0.95rem;
+    padding: 1rem 0.7rem;
+  }
+  .lesson-sidebar {
+    padding: 1rem 0.5rem;
+  }
+}
+</style>
